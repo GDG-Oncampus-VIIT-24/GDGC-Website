@@ -6,7 +6,7 @@
 Our mission is to empower students by providing them with opportunities to learn, grow, and connect with like-minded individuals. We focus on nurturing talent in various fields such as web development, mobile development, cloud computing, artificial intelligence, and more.
 
 ## Activities
-We organize a variety of events, including:
+We organize a variety of events,workshops, including:
 
 - **Workshops**: Hands-on sessions on trending technologies and tools.
 - **Tech Talks**: Guest lectures from industry experts and experienced developers.
