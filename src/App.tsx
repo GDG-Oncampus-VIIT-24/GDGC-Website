@@ -2,7 +2,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/index.ts";
 import { Home, Team, Event } from "./pages/index.ts";
-import Articles from "./components/Articles"; // Import the Articles component
+import Articles from "./components/Articles"; 
 import "./App.css";
 
 import { AnimatePresence } from "framer-motion";
