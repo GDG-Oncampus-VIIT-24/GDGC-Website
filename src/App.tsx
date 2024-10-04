@@ -1,4 +1,3 @@
-// src/App.tsx
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Navbar } from "./components/index.ts";
 import { Home, Team, Event } from "./pages/index.ts";
