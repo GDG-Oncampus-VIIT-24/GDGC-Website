@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar relative bg-white p-4 flex justify-between items-center w-full shadow-md px-[5vw] font-GSD_Regular z-10">
+    <nav className="navbar relative bg-white p-4 flex justify-between items-center w-full shadow-md px-[5vw] font-GSD_Regular z-50">
       {/* Logo Section */}
       <div className="flex items-center">
         <button onClick={() => navigate("/")}>
@@ -45,12 +45,12 @@ const Navbar = () => {
         >
           Team
         </button>
-        <button
+        {/* <button
           className="text-gray-800 nav-links relative"
           onClick={() => navigate("/articles")}
         >
           Articles
-        </button>
+        </button> */}
         <button
           className="text-gray-800 nav-links relative"
           onClick={() => navigate("/contact")}

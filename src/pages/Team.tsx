@@ -9,7 +9,7 @@ import NikhilPic from "../assets/nikhil.jpeg";
 import SowmyaPic from "../assets/sowmya.jpg";
 import KoushikPic from "../assets/koushik.jpeg";
 import SidharthPic from "../assets/sidharth.jpeg";
-import RaghavendraPic from "../assets/raghavendra.jpeg";
+import RagavendraPic from "../assets/raghavendra.jpeg";
 import AshrithPic from "../assets/ashrith.jpg";
 import TejeshPic from "../assets/tejesh.jpg";
 import ShirinPic from "../assets/shirin.jpeg";
@@ -28,126 +28,135 @@ const Team = () => {
   const innerRef = useRef<HTMLDivElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
 
-  const Members: Array<{ MemberName: string, Role: string, Image: any, GithubLink: string, LinkedinLink: string }> = [
+  const Members: Array<{
+    MemberName: string;
+    Role: string;
+    Image: any;
+    GithubLink: string;
+    LinkedinLink: string;
+  }> = [
     {
       MemberName: "Hima Varshini",
       Role: "GDG OnCampus Organizer",
       Image: HimaPic,
       GithubLink: "https://github.com/himavarshini28",
-      LinkedinLink: "https://www.linkedin.com/in/himavarshini-mahapatruni-285121269/"
+      LinkedinLink:
+        "https://www.linkedin.com/in/himavarshini-mahapatruni-285121269/",
     },
     {
       MemberName: "Sujith Srikar",
       Role: "Co-Lead",
       Image: SujithPic,
       GithubLink: "https://github.com/Sujith-Srikar",
-      LinkedinLink: "https://www.linkedin.com/in/sujith-srikar/"
+      LinkedinLink: "https://www.linkedin.com/in/sujith-srikar/",
     },
     {
       MemberName: "Varun Kumar",
       Role: "Technical Lead",
       Image: VarunPic,
       GithubLink: "https://github.com/Padala-Varun",
-      LinkedinLink: "https://www.linkedin.com/in/padala-venkata-sai-varun-kumar-37b844291/"
+      LinkedinLink:
+        "https://www.linkedin.com/in/padala-venkata-sai-varun-kumar-37b844291/",
     },
     {
       MemberName: "Sri Ganesh",
       Role: "CP / DSA Lead",
       Image: GaneshPic,
       GithubLink: "https://github.com/sri-ganeshk",
-      LinkedinLink: "https://www.linkedin.com/in/sri-ganesh-k-5706ab269/"
+      LinkedinLink: "https://www.linkedin.com/in/sri-ganesh-k-5706ab269/",
     },
     {
       MemberName: "Durgesh",
       Role: "CP / DSA Lead",
       Image: DurgeshPic,
       GithubLink: "https://github.com/bot-durgesh",
-      LinkedinLink: "https://www.linkedin.com/in/ankoji-durgesh-877a032a1/"
+      LinkedinLink: "https://www.linkedin.com/in/ankoji-durgesh-877a032a1/",
     },
     {
       MemberName: "Guru Nikhil",
       Role: "Web Developer Lead",
       Image: NikhilPic,
       GithubLink: "https://github.com/MGuruNikhil",
-      LinkedinLink: "https://www.linkedin.com/in/gurunikhilm/"
+      LinkedinLink: "https://www.linkedin.com/in/gurunikhilm/",
     },
     {
       MemberName: "Sowmya",
       Role: "Web Developer Lead",
       Image: SowmyaPic,
       GithubLink: "https://www.linkedin.com/in/sowmya-musti-531715257/",
-      LinkedinLink: "https://github.com/m-sowmya7"
+      LinkedinLink: "https://github.com/m-sowmya7",
     },
     {
       MemberName: "Koushik",
       Role: "AI/ML Lead",
       Image: KoushikPic,
       GithubLink: "https://github.com/kskkoushik",
-      LinkedinLink: "https://www.linkedin.com/in/kskkoushik135/"
+      LinkedinLink: "https://www.linkedin.com/in/kskkoushik135/",
     },
     {
       MemberName: "Sidharth",
       Role: "Android Lead",
       Image: SidharthPic,
       GithubLink: "https://github.com/elitedeveloper05",
-      LinkedinLink: "https://www.linkedin.com/in/elitedeveloper05"
+      LinkedinLink: "https://www.linkedin.com/in/elitedeveloper05",
     },
     {
-      MemberName: "Raghavendra",
+      MemberName: "Ragavendra",
       Role: "Cloud Lead",
-      Image: RaghavendraPic,
+      Image: RagavendraPic,
       GithubLink: "https://github.com/Raghava1329",
-      LinkedinLink: "https://www.linkedin.com/in/avula-ragavendra-ba1276266"
+      LinkedinLink: "https://www.linkedin.com/in/avula-ragavendra-ba1276266",
     },
     {
       MemberName: "Ashrith",
       Role: "UI/UX Lead",
       Image: AshrithPic,
       GithubLink: "https://github.com/ashrith24",
-      LinkedinLink: "https://www.linkedin.com/in/srinivasa-ashrith-b-20388826b"
+      LinkedinLink: "https://www.linkedin.com/in/srinivasa-ashrith-b-20388826b",
     },
     {
       MemberName: "Tejesh",
       Role: "Graphic Design Lead",
       Image: TejeshPic,
       GithubLink: "https://github.com/tejesh2709",
-      LinkedinLink: "https://www.linkedin.com/in/mylapalli-tejesh-b1a174270"
+      LinkedinLink: "https://www.linkedin.com/in/mylapalli-tejesh-b1a174270",
     },
     {
       MemberName: "Shirin",
       Role: "Video Editing Lead",
       Image: ShirinPic,
       GithubLink: "https://github.com/SHIRIN-WAFIQAH-M4",
-      LinkedinLink: "https://www.linkedin.com/in/shirin-wafiqah-563a8a292"
+      LinkedinLink: "https://www.linkedin.com/in/shirin-wafiqah-563a8a292",
     },
     {
       MemberName: "Giri Krishna",
       Role: "Event Management Lead",
       Image: GiriPic,
       GithubLink: "https://github.com/girikrishnajetti",
-      LinkedinLink: "https://www.linkedin.com/in/giri-krishna-365ab9271"
+      LinkedinLink: "https://www.linkedin.com/in/giri-krishna-365ab9271",
     },
     {
       MemberName: "Varshitha",
       Role: "Event Management Lead",
       Image: VarshithaPic,
       GithubLink: "https://github.com/varshithalalam",
-      LinkedinLink: "https://www.linkedin.com/in/varshitha-lalam-784533270"
+      LinkedinLink: "https://www.linkedin.com/in/varshitha-lalam-784533270",
     },
     {
       MemberName: "Vivek Vardhan",
       Role: "Content Writing Lead",
       Image: VivekPic,
       GithubLink: "https://github.com/vivek-310",
-      LinkedinLink: "https://www.linkedin.com/in/vivek-vardhan-chinni-418843268/"
+      LinkedinLink:
+        "https://www.linkedin.com/in/vivek-vardhan-chinni-418843268/",
     },
     {
       MemberName: "Thanusha",
       Role: "Content Writing Lead",
       Image: ThanushaPic,
       GithubLink: "https://github.com/thanusha-korada",
-      LinkedinLink: "https://www.linkedin.com/in/thanusha-korada-55b2642b2"
-    }
+      LinkedinLink: "https://www.linkedin.com/in/thanusha-korada-55b2642b2",
+    },
   ];
 
   useEffect(() => {

@@ -8,6 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { Link } from "react-router-dom";
+import "../../public/images/GENai.jpg"
 
 interface CardProps {
   urlid: string;
@@ -147,10 +148,16 @@ const Card: React.FC<{ card: CardProps; index: number }> = ({
       >
         <img
           className="object-cover w-full h-full overflow-hidden rounded-[20px] border-black border-2"
-          src={card.image}
+          src={card.logo}
           alt={card.title}
         />
       </div>
+
+      {/* Live Preview */}
+      <span className="absolute top-2 left-2 flex items-center bg-red-500 text-white px-2 py-1 rounded-md text-sm">
+        Live
+        <span className="ml-2 h-2 w-2 bg-white rounded-full live-icon"></span>
+      </span>
 
       <hr className="border-t-2 border-black w-full" />
 
@@ -181,9 +188,11 @@ const Card: React.FC<{ card: CardProps; index: number }> = ({
           </Link>
         </div>
         {card.urlid !== "PastEvents" && (
-          <button className="bg-blue-500 text-white text-center px-6 py-1 rounded backdrop-blur transition-colors hover:bg-blue-700 hover:scale-105">
-            RSVP
-          </button>
+          <Link to="https://shorturl.at/5oxr6">
+            <button className="bg-blue-500 text-white text-center px-6 py-1 rounded backdrop-blur transition-colors hover:bg-blue-700 hover:scale-105">
+              RSVP
+            </button>
+          </Link>
         )}
       </div>
     </motion.div>
@@ -192,12 +201,13 @@ const Card: React.FC<{ card: CardProps; index: number }> = ({
 
 export const upcomingCards: CardProps[] = [
   {
-    urlid:"UpcomingEvents",
-    title: "Web Development",
-    logo: "gdg logo.png",
-    image: "/images/devfest.png",
-    date: "Oct 5th 2024",
-    content: "Learn about the latest trends in web development",
+    urlid: "UpcomingEvents",
+    title: "Inauguration",
+    logo: "/images/inaugurationlogo.jpg",
+    image: "/images/inauguration.jpg",
+    date: "Oct 16th 2024",
+    content:
+      "Inaugural Event of Google Developer Groups (GDG) On Campus at Vignan’s Institute of Information Technology! 🚀",
   },
   // { title: "Artificial Intelligence and Machine Learning", logo: "gdg logo.png", image: "/images/devfest.png", date: "Oct 5th 2024", content: "Discover how AI is changing the world."},
   // { title: "Android Development", logo: "gdg logo.png", image: "/images/devfest.png", date: "Oct 5th 2024", content: "Build powerful Android apps using modern frameworks."},
@@ -207,11 +217,12 @@ export const upcomingCards: CardProps[] = [
 export const pastCards: CardProps[] = [
   {
     urlid: "PastEvents",
-    title: "Past Event 1",
-    logo: "logo.png",
-    image: "/images/devfest.png",
-    date: "Sep 20th 2024",
-    content: "Details of past event 1",
+    title: "GenAI Study Jams",
+    logo: "/images/genailogo.jpg",
+    image: "/images/GENai.jpg",
+    date: "Oct 11th 2024",
+    content:
+      "GENAI Study Jams typically focus on introducing developers and learners to Generative AI technologies, tools, and applications through hands-on labs",
   },
   // { title: "Past Event 2", logo: "logo.png", image: "/images/devfest.png", date: "Aug 15th 2024", content: "Details of past event 2"},
   // { title: "Past Event 3", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 3"},
@@ -221,7 +232,7 @@ export const pastCards: CardProps[] = [
 
 const Event = () => {
   return (
-    <div className="relative bg-grid-black/[0.2]">
+    <div className="relative bg-grid-black/[0.1]">
       <NewEvents />
       <PrevEvents />
     </div>

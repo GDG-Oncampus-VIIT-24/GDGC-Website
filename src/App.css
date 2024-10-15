@@ -150,3 +150,36 @@ body {
   background: rgba(255, 255, 255, 0.5); /* Optional: adds a translucent white background */
   mask-image: linear-gradient(to top, transparent 0%, white 80%);
 }
+
+@keyframes live {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(3.5, 3.5);
+    background-color: rgba(255, 0, 0, 0); /* Corrected color value */
+  }
+}
+
+.live-icon {
+  position: relative;
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  margin-left: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.live-icon:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(238, 232, 232, 0.6); /* Adjusted to use valid RGB */
+  border-radius: 50%;
+  animation: live 2s ease-in-out infinite;
+}

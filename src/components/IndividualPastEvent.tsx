@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
 import { TracingBeam } from "./ui/tracing-beam";
+import logo from "/images/GENai.jpg"
 
-function IndividualEvent() {
+function IndividualPastEvent() {
 
-   const { id } = useParams<{ id: string }>();
-   console.log("Rendering IndividualEvent with id:", id);
+   const obj = useParams();
+   console.log("Params: ", useParams());
+
+   console.log("Rendering IndividualEvent with id:", obj.id);
 
 
   return (
@@ -14,43 +17,44 @@ function IndividualEvent() {
           <div>
             {/* Main Event Image */}
             <img
-              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={logo}
               alt="Hack2Code"
-              className="w-full h-auto object-cover rounded-lg"
+              className="w-full h-auto aspect-square object-cover rounded-lg border border-red-900"
             />
           </div>
           <div className="flex flex-col justify-center">
             {/* Event Details */}
-            <h2 className="text-3xl font-bold mb-4">{`Event Id: ${id}`}</h2>
+            <h2 className="text-3xl font-bold mb-4">GEN AI Study Jams</h2>
             <p className="text-lg mb-6">
-              Indulge in the 24hrs hackathon to build Mobile and Web apps. Can't
-              code? No problem. Join the solution challenge and participate in
-              the no code hackathon.
+              Gen AI Study Jams will provide students an opportunity to
+              kickstart their learning on Gen AI technology, and implement the
+              learning by enabling them to build projects on the Google Cloud
+              console.
             </p>
             <div className="grid grid-cols-2 gap-4 text-center mb-4">
               <div>
-                <h4 className="text-xl font-semibold">50+</h4>
-                <p>Teams</p>
+                <h4 className="text-xl font-semibold">12+</h4>
+                <p>Participants</p>
               </div>
               <div>
-                <h4 className="text-xl font-semibold">2</h4>
+                <h4 className="text-xl font-semibold">30</h4>
                 <p>Days</p>
               </div>
               <div>
-                <h4 className="text-xl font-semibold">16th Dec</h4>
-                <p>Event on</p>
+                <h4 className="text-xl font-semibold">11th Oct - 11th Nov</h4>
+                <p>Timeline</p>
               </div>
               <div>
-                <h4 className="text-xl font-semibold">4</h4>
-                <p>Sessions</p>
+                <h4 className="text-xl font-semibold">15+</h4>
+                <p>Labs</p>
               </div>
             </div>
             <div className="mb-4">
               <span className="inline-block bg-gray-200 text-gray-600 rounded-full px-4 py-1 mr-2">
-                #Hack2Code
+                #StudyJams
               </span>
               <span className="inline-block bg-gray-200 text-gray-600 rounded-full px-4 py-1">
-                #hackathon
+                #AI
               </span>
             </div>
             <button className="bg-blue-500 hover:bg-blue-700 text-white w-[10vw] py-2 rounded-lg">
@@ -101,4 +105,4 @@ function IndividualEvent() {
   );
 }
 
-export default IndividualEvent;
+export default IndividualPastEvent;

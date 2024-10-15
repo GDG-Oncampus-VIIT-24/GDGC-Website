@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Navbar, Footer, Articles, FeedbackForm, IndividualEvent } from "./components/index.ts";
+import { Navbar, Footer, Articles, FeedbackForm, IndividualPastEvent, IndividualUpcomingEvent } from "./components/index.ts";
 import {Home, Team , Events } from "./pages/index.ts"
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
@@ -39,7 +39,14 @@ function App() {
         <Route path="/articles" element={<Articles />} />
         <Route path="/feedback" element={<FeedbackForm />} />
         <Route path="/contact" element={<Footer />} />
-        <Route path="/events/:name/:slug" element={<IndividualEvent />} />
+        <Route
+          path="/events/PastEvents/:slug"
+          element={<IndividualPastEvent />}
+        />
+        <Route
+          path="/events/UpcomingEvents/:slug"
+          element={<IndividualUpcomingEvent />}
+        />
       </Routes>
     </>
   );
