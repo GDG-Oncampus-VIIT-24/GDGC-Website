@@ -13,7 +13,7 @@ import RaghavendraPic from "../assets/raghavendra.jpeg";
 import AshrithPic from "../assets/ashrith.jpg";
 import TejeshPic from "../assets/tejesh.jpg";
 import ShirinPic from "../assets/shirin.jpeg";
-import GiriPic from "../assets/giri.jpeg";
+import GiriPic from "../assets/giri.jpg";
 import VarshithaPic from "../assets/varshitha.jpg";
 import VivekPic from "../assets/vivek.jpg";
 import ThanushaPic from "../assets/thanusha.jpeg";
