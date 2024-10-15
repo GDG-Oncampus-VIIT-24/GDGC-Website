@@ -59,7 +59,7 @@ function IndividualUpcomingEvent() {
             </div>
 
             <Link to="https://shorturl.at/5oxr6">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white w-[10vw] py-2 rounded-lg">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white md:w-[10vw] py-2 rounded-lg w-[20vw]">
                 RSVP
               </button>
             </Link>

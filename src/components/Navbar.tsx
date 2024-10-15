@@ -116,7 +116,7 @@ const Navbar = () => {
         >
           Team
         </button>
-        <button
+        {/* <button
           className="text-white text-3xl mb-6 transition relative"
           onClick={() => {
             navigate("/articles");
@@ -124,7 +124,7 @@ const Navbar = () => {
           }}
         >
           Articles
-        </button>
+        </button> */}
         <button
           className="text-white text-3xl transition relative"
           onClick={() => {
