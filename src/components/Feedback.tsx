@@ -56,7 +56,7 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-[#ffffff] bg-grid-black/[0.2]">
+    <div className="relative w-full min-h-screen bg-[#ffffff] bg-grid-black/[0.2]">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,white)]"></div>
 
 
