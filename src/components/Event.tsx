@@ -7,8 +7,10 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface CardProps {
+  urlid: string;
   logo?: string;
   image: string;
   date: string;
@@ -54,7 +56,7 @@ const PrevEvents = () => {
   });
 
   // scrolling position to -50% in y
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "1%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "1%"])
 
   return (
     <section
@@ -166,16 +168,23 @@ const Card: React.FC<{ card: CardProps; index: number }> = ({
       {/* Footer with Tags and RSVP */}
       <div className="flex justify-between items-center p-4 mt-auto">
         <div className="flex space-x-3 py-1">
-          <span className="inline-block bg-grey-100 rounded-full px-2 py-1 text-sm font-semibold text-gray-700">
-            #code
-          </span>
-          <span className="inline-block bg-grey-100 rounded-full px-2 py-1 text-sm font-semibold text-gray-700">
-            #dev
-          </span>
+          {/* <span className="inline-block bg-grey-100 rounded-full px-2 py-1 text-sm font-semibold text-gray-700">
+              #code
+            </span>
+            <span className="inline-block bg-grey-100 rounded-full px-2 py-1 text-sm font-semibold text-gray-700">
+              #dev
+            </span> */}
+          <Link to={`/events/${card.urlid}/${index}`}>
+            <button className="bg-blue-500 text-white text-center px-6 py-1 rounded backdrop-blur transition-colors hover:bg-blue-700 hover:scale-105">
+              View More
+            </button>
+          </Link>
         </div>
-        <button className="bg-blue-500 text-white text-center px-6 py-1 rounded backdrop-blur transition-colors hover:bg-blue-700 hover:scale-105">
-          RSVP
-        </button>
+        {card.urlid !== "PastEvents" && (
+          <button className="bg-blue-500 text-white text-center px-6 py-1 rounded backdrop-blur transition-colors hover:bg-blue-700 hover:scale-105">
+            RSVP
+          </button>
+        )}
       </div>
     </motion.div>
   );
@@ -183,6 +192,7 @@ const Card: React.FC<{ card: CardProps; index: number }> = ({
 
 export const upcomingCards: CardProps[] = [
   {
+    urlid:"UpcomingEvents",
     title: "Web Development",
     logo: "gdg logo.png",
     image: "/images/devfest.png",
@@ -196,6 +206,7 @@ export const upcomingCards: CardProps[] = [
 ];
 export const pastCards: CardProps[] = [
   {
+    urlid: "PastEvents",
     title: "Past Event 1",
     logo: "logo.png",
     image: "/images/devfest.png",

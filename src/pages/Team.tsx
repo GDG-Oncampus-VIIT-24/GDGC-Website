@@ -30,8 +30,8 @@ const Team = () => {
 
   const Members: Array<{ MemberName: string, Role: string, Image: any, GithubLink: string, LinkedinLink: string }> = [
     {
-      MemberName: "Hima",
-      Role: "GDG Organizer",
+      MemberName: "Hima Varshini",
+      Role: "GDG OnCampus Organizer",
       Image: HimaPic,
       GithubLink: "https://github.com/himavarshini28",
       LinkedinLink: "https://www.linkedin.com/in/himavarshini-mahapatruni-285121269/"
@@ -51,15 +51,15 @@ const Team = () => {
       LinkedinLink: "https://www.linkedin.com/in/padala-venkata-sai-varun-kumar-37b844291/"
     },
     {
-      MemberName: "Sai Ganesh",
-      Role: "CP Lead",
+      MemberName: "Sri Ganesh",
+      Role: "CP / DSA Lead",
       Image: GaneshPic,
       GithubLink: "https://github.com/sri-ganeshk",
       LinkedinLink: "https://www.linkedin.com/in/sri-ganesh-k-5706ab269/"
     },
     {
       MemberName: "Durgesh",
-      Role: "CP Lead",
+      Role: "CP / DSA Lead",
       Image: DurgeshPic,
       GithubLink: "https://github.com/bot-durgesh",
       LinkedinLink: "https://www.linkedin.com/in/ankoji-durgesh-877a032a1/"

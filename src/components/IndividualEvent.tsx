@@ -1,6 +1,12 @@
+import { useParams } from "react-router-dom";
 import { TracingBeam } from "./ui/tracing-beam";
 
 function IndividualEvent() {
+
+   const { id } = useParams<{ id: string }>();
+   console.log("Rendering IndividualEvent with id:", id);
+
+
   return (
     <TracingBeam className="px-6">
       <div className="max-w-4xl mx-auto antialiased pt-8 pb-8">
@@ -15,7 +21,7 @@ function IndividualEvent() {
           </div>
           <div className="flex flex-col justify-center">
             {/* Event Details */}
-            <h2 className="text-3xl font-bold mb-4">Hack2Code</h2>
+            <h2 className="text-3xl font-bold mb-4">{`Event Id: ${id}`}</h2>
             <p className="text-lg mb-6">
               Indulge in the 24hrs hackathon to build Mobile and Web apps. Can't
               code? No problem. Join the solution challenge and participate in
