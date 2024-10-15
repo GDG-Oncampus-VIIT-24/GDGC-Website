@@ -2,46 +2,63 @@ import { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
+import emailjs from 'emailjs-com';
+
 
 import tf from "/images/tensorflow.svg";
 import fb from "/images/firebase.svg";
 import gcloud from "/images/gcloud.svg";
 import flutter from "/images/flutter.svg";
 
-const FeedbackForm = () => {
-  const [selectedEmoji, setSelectedEmoji] = useState<number | null>(null);
-  const [thoughts, setThoughts] = useState("");
 
-  const emojis = ["😄", "🙂", "😐", "🙁"];
+const FeedbackForm = () => {
+  const [thoughts, setThoughts] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Construct the mailto link
-    const subject = encodeURIComponent("Feedback / Suggestion to GDGC OnCampus VIIT");
-    const body = encodeURIComponent(
-      `Emoji: ${
-        selectedEmoji !== null ? emojis[selectedEmoji] : "None"
-      }\n\nThoughts: ${thoughts}`
-    );
-    // Construct the Gmail compose link
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=himavarshinimahapatruni@gmail.com&su=${subject}&body=${body}`;
+    if (!name || !email || !thoughts) {
+      alert("Please fill in all fields.");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Redirect to Gmail compose page
-    window.open(gmailLink, "_blank");
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
 
-    // You could also send this to your backend, but here it's handled by the mailto redirect
+    const templateParams = {
+      user_name: name,
+      user_email: email,
+      user_thoughts: thoughts
+    };
+
+    emailjs
+      .send('service_8oeq8zu', 'template_2dvihlo', templateParams, 'PhHhBFsW2MXNaD8y1')
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          alert("Feedback sent successfully!");
+        },
+        (error) => {
+          console.log('FAILED...', error);
+          alert("Failed to send feedback. Please try again.");
+        }
+      );
+
+    // Clear form fields
+    setThoughts("");
+    setName("");
+    setEmail("");
   };
 
   return (
     <div className="relative w-full h-screen bg-[#ffffff] mt-2 bg-grid-black/[0.2]">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,white)]"></div>
-      {/* Grid background
-      <div className="absolute inset-0 grid grid-cols-[repeat(20,1fr)] grid-rows-[repeat(20,1fr)] gap-px">
-        {Array.from({ length: 400 }).map((_, i) => (
-          <div key={i} className="bg-white"></div>
-        ))}
-      </div> */}
+
 
       {/* TensorFlow logo */}
       <div className="absolute top-8 left-16 w-16 h-16 transform -rotate-12 hidden md:block">
@@ -73,24 +90,29 @@ const FeedbackForm = () => {
             What do you think of this Community?
           </p>
 
-          <div className="flex justify-between items-center mb-6">
-            {emojis.map((emoji, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedEmoji(index)}
-                className={`p-2 rounded-full transition-colors ${
-                  selectedEmoji === index ? "bg-blue-100" : "hover:bg-gray-100"
-                }`}
-                aria-label={`Emoji ${index + 1}`}
-              >
-                <span className="text-3xl">{emoji}</span>
-              </button>
-            ))}
+          <div className="mb-4">
+            <label className="block mb-1 text-sm">Name:</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-md"
+              required
+            />
           </div>
 
-          <p className="text-sm mb-2">
-            Do you have any thoughts you'd like to share?
-          </p>
+          <div className="mb-4">
+            <label className="block mb-1 text-sm">Email:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-md"
+              required
+            />
+          </div>
+
+          <p className="text-sm mb-2">Do you have any thoughts you'd like to share?</p>
           <Textarea
             value={thoughts}
             onChange={(e) => setThoughts(e.target.value)}
@@ -102,8 +124,9 @@ const FeedbackForm = () => {
             <Button
               variant="outline"
               onClick={() => {
-                setSelectedEmoji(null);
                 setThoughts("");
+                setName("");
+                setEmail("");
               }}
             >
               Cancel
