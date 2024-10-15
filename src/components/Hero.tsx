@@ -10,6 +10,7 @@ import p7 from "/images/cloud_3.svg";
 import p8 from "/images/react_icon.svg";
 import p9 from "/images/programming.svg";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [boldLetters, setBoldLetters] = useState(Array(15).fill(true));
@@ -171,10 +172,11 @@ const Hero = () => {
         <FaRegSquare />
         <span className="px-4 text-grey-700">BUILD</span>
       </div>
-
-      <button className="h-[7vh] sm:h-[7vh] w-[35vw] sm:w-[10vw] bg-blue-500 text-white rounded-lg text-[4vw] sm:text-[2vw] transition-transform duration-300 ease-in-out hover:bg-blue-700 hover:scale-105">
-        Join us
-      </button>
+      <Link to="https://gdg.community.dev/gdg-on-campus-vignans-institute-of-information-technology-visakhapatnam-india/">
+        <button className="h-[7vh] sm:h-[6vh] w-[35vw] sm:w-[8vw] bg-blue-500 text-white rounded-lg text-[4vw] sm:text-[1.5vw] transition-transform duration-300 ease-in-out hover:bg-blue-700 hover:scale-105">
+          Join us
+        </button>
+      </Link>
     </motion.div>
   );
 };

@@ -43,7 +43,8 @@ function Footer() {
   };
 
   return (
-    <footer className=" relative min-h-screen w-full pt-10 bg-white bg-dot-black/[0.2] font-GSD_Regular">
+    <footer className=" relative min-h-screen w-full pt-10 bg-[#D8E2F9] bg-dot-black/[0.2] font-GSD_Regular">
+      <div className="absolute blur-effect"></div>
       {/* Main Content Wrapper */}
       <motion.div
         ref={ref}
@@ -73,7 +74,7 @@ function Footer() {
         <ul className="space-y-4 w-full flex flex-col items-center md:items-start">
           <li>
             <Link
-              to="https://github.com"
+              to="https://github.com/GDG-Oncampus-VIIT-24"
               className="linkWrap style-4"
               target="_blank"
               rel="noopener noreferrer"
@@ -97,7 +98,7 @@ function Footer() {
           </li>
           <li>
             <Link
-              to="https://x.com"
+              to="https://mail.google.com/mail/?view=cm&fs=1&to=dscviit@gmail.com"
               className="linkWrap style-4"
               target="_blank"
               rel="noopener noreferrer"
@@ -108,7 +109,7 @@ function Footer() {
                 } as React.CSSProperties
               }
             >
-              <span className="text-blue-500">X</span>
+              <span className="text-blue-500">EMAIL</span>
               <svg viewBox="0 0 13 20">
                 <polyline
                   points="0.5 19.5 3 19.5 12.5 10 3 0.5"
@@ -121,7 +122,7 @@ function Footer() {
           </li>
           <li>
             <Link
-              to="https://linkedin.com"
+              to="https://www.linkedin.com/in/gdsc-vignan-s-iit-vignan-s-institute-of-information-technology-1940a9298/"
               className="linkWrap style-4"
               target="_blank"
               rel="noopener noreferrer"
@@ -145,7 +146,7 @@ function Footer() {
           </li>
           <li>
             <Link
-              to="https://instagram.com"
+              to="https://www.instagram.com/gdsc_viit/"
               className="linkWrap style-4"
               target="_blank"
               rel="noopener noreferrer"

@@ -142,3 +142,11 @@ body {
   animation-timeline: view();  /* This is intended to animate when the element comes into view */
   animation-range: entry 0% cover 40%; /* Animates when the element covers 40% of the viewport */
 }
+
+.blur-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(1px); /* Adjust the blur amount */
+  background: rgba(255, 255, 255, 0.5); /* Optional: adds a translucent white background */
+  mask-image: linear-gradient(to top, transparent 0%, white 80%);
+}

@@ -221,7 +221,7 @@ export const pastCards: CardProps[] = [
 
 const Event = () => {
   return (
-    <div className="relative">
+    <div className="relative bg-grid-black/[0.2]">
       <NewEvents />
       <PrevEvents />
     </div>
