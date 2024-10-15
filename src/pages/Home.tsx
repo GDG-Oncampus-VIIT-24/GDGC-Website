@@ -1,4 +1,4 @@
-import { Hero, Event } from "../components/index";
+import { Hero, Event, Footer } from "../components/index";
 import Team from "../pages/Team"
 
 function Home() {
@@ -8,6 +8,7 @@ function Home() {
         <Hero />
         <Event />
         <Team />
+        <Footer />
       </div>
     </>
   );

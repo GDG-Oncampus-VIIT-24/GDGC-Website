@@ -28,8 +28,6 @@ function App() {
     window.scrollTo(0, 0); // Scroll to top
   }, [location.pathname]);
 
-  const hideFooter = location.pathname.startsWith("/events/");
-
   return (
     <>
       <Navbar />
@@ -40,9 +38,9 @@ function App() {
         <Route path="/footer" element={<Footer />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/feedback" element={<FeedbackForm />} />
+        <Route path="/contact" element={<Footer />} />
         <Route path="/events/:name/:slug" element={<IndividualEvent />} />
       </Routes>
-      {!hideFooter && <Footer />}
     </>
   );
 }
