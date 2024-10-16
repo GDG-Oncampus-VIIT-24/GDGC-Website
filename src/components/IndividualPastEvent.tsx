@@ -33,7 +33,7 @@ function IndividualPastEvent() {
             </p>
             <div className="grid grid-cols-2 gap-4 text-center mb-4">
               <div>
-                <h4 className="text-xl font-semibold">12+</h4>
+                <h4 className="text-xl font-semibold">120+</h4>
                 <p>Participants</p>
               </div>
               <div>
@@ -57,9 +57,9 @@ function IndividualPastEvent() {
                 #AI
               </span>
             </div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white w-[10vw] py-2 rounded-lg">
-              RSVP
-            </button>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white md:w-[10vw] py-2 rounded-lg w-[20vw]">
+                RSVP
+              </button>
           </div>
         </div>
 
