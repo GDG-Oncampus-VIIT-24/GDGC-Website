@@ -204,7 +204,7 @@ export const upcomingCards: CardProps[] = [
     urlid: "UpcomingEvents",
     title: "Inauguration",
     logo: "/images/inaugurationlogo.jpg",
-    image: "/images/inauguration.jpg",
+    image: "/images/inauguration.png",
     date: "Oct 16th 2024",
     content:
       "Inaugural Event of Google Developer Groups (GDG) On Campus at Vignan’s Institute of Information Technology! 🚀",

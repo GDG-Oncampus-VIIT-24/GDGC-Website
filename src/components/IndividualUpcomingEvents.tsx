@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { TracingBeam } from "./ui/tracing-beam";
-import logo from "/images/inauguration.jpg";
+import logo from "/images/inauguration.png";
 
 function IndividualUpcomingEvent() {
   const obj = useParams();
