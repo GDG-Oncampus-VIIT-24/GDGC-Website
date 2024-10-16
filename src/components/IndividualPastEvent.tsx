@@ -63,7 +63,7 @@ function IndividualPastEvent() {
           </div>
         </div>
 
-        {/* Resources Mentioned Section */}
+        {/* Resources Mentioned Section
         <div className="mt-10">
           <h3 className="text-xl font-semibold mb-4">Resources Mentioned:</h3>
           <ul className="list-disc list-inside">
@@ -90,7 +90,7 @@ function IndividualPastEvent() {
           </ul>
         </div>
 
-        {/* Event Photos Section */}
+        Event Photos Section
         <div className="mt-10">
           <h3 className="text-xl font-semibold mb-4">Event Photos</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -99,7 +99,7 @@ function IndividualPastEvent() {
             <div className="bg-gray-300 h-32 rounded-lg"></div>
             <div className="bg-gray-300 h-32 rounded-lg"></div>
           </div>
-        </div>
+        </div>*/}
       </div>
     </TracingBeam>
   );
