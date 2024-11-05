@@ -40,11 +40,11 @@ function App() {
         <Route path="/feedback" element={<FeedbackForm />} />
         <Route path="/contact" element={<Footer />} />
         <Route
-          path="/events/PastEvents/:slug"
+          path="/events/PastEvents/:id"
           element={<IndividualPastEvent />}
         />
         <Route
-          path="/events/UpcomingEvents/:slug"
+          path="/events/UpcomingEvents/:id"
           element={<IndividualUpcomingEvent />}
         />
       </Routes>

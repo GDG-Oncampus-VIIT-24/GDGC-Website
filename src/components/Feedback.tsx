@@ -59,7 +59,6 @@ const FeedbackForm = () => {
     <div className="relative w-full min-h-screen bg-[#ffffff] bg-grid-black/[0.2]">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,white)]"></div>
 
-
       {/* TensorFlow logo */}
       <div className="absolute top-8 left-16 w-16 h-16 transform -rotate-12 hidden md:block">
         <img src={tf} alt="TensorFlow Logo" width={64} height={64} />
@@ -112,10 +111,13 @@ const FeedbackForm = () => {
             />
           </div>
 
-          <p className="text-sm mb-2">Do you have any thoughts you'd like to share?</p>
+          <p className="text-sm mb-2">
+            Do you have any thoughts you'd like to share?
+          </p>
           <Textarea
             value={thoughts}
             onChange={(e) => setThoughts(e.target.value)}
+            placeholder="If you have any specific events you'd like us to organize,you can also add them here!"
             className="mb-4 border border-grey-700"
             rows={4}
           />
