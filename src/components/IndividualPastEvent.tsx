@@ -36,7 +36,7 @@ function IndividualPastEvent() {
                 <p>Days</p>
               </div>
               <div>
-                <h4 className="text-xl font-semibold">{eventData.date}</h4>
+                <h4 className="text-xl font-semibold">{eventData.timeline}</h4>
                 <p>Timeline</p>
               </div>
               {eventData.labs && (

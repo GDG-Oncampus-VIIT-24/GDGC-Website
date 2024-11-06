@@ -10,15 +10,18 @@ interface CardProps {
   hashtags: Array<string>;
   labs?: string;
   resources?: Array<{ name: string; link: string }>;
+  timeline: string;
+  rvsplink?: string;
 }
 
 export const pastCards: CardProps[] = [
   {
     urlid: "PastEvents",
     title: "GenAI Study Jams",
-    logo: "/images/genailogo.jpg",
+    logo: "/images/genaistudy.jpg",
     image: "/images/GENai.jpg",
-    date: "Oct 11th 2024 - Nov 11th 2024",
+    timeline: "Oct 11th 2024 - Nov 11th 2024",
+    date: "2024-10-11 to 2024-11-11",
     content:
       "GENAI Study Jams typically focus on introducing developers and learners to Generative AI technologies, tools, and applications through hands-on labs",
     participants: "140",
@@ -31,7 +34,8 @@ export const pastCards: CardProps[] = [
     title: "Inauguration",
     logo: "/images/inaugurationlogo.jpg",
     image: "/images/inauguration.png",
-    date: "Oct 16th 2024",
+    timeline: "Oct 16th 2024",
+    date: "2024-10-16",
     content:
       "Inaugural Event of Google Developer Groups (GDG) On Campus at Vignan’s Institute of Information Technology! 🚀",
     participants: "240",
@@ -49,17 +53,18 @@ export const pastCards: CardProps[] = [
 ];
 
 export const upcomingCards: CardProps[] = [
-  // {
-  //   urlid: "UpcomingEvents",
-  //   title: "Inauguration",
-  //   logo: "/images/inaugurationlogo.jpg",
-  //   image: "/images/inauguration.png",
-  //   date: "Oct 16th 2024",
-  //   content:
-  //     "Inaugural Event of Google Developer Groups (GDG) On Campus at Vignan’s Institute of Information Technology! 🚀",
-  // },
-  // { title: "Artificial Intelligence and Machine Learning", logo: "gdg logo.png", image: "/images/devfest.png", date: "Oct 5th 2024", content: "Discover how AI is changing the world."},
-  // { title: "Android Development", logo: "gdg logo.png", image: "/images/devfest.png", date: "Oct 5th 2024", content: "Build powerful Android apps using modern frameworks."},
-  // { title: "Data Science", logo: "gdg logo.png", image: "/images/devfest.png", date: "Oct 5th 2024", content: "Explore the world of data and analytics."},
-  // { title: "Cloud Computing", logo: "gdg logo.png", image: "/images/devfest.png", date: "Oct 5th 2024", content: "Learn about scalable cloud infrastructure."},
+  {
+    urlid: "UpcomingEvents",
+    title: "Intro to Gen AI",
+    logo: "/images/genai_speakers.jpg",
+    image: "/images/genai_speakers.jpg",
+    timeline: "Nov 7th 2024",
+    date: "2024-11-7",
+    content:
+      "The Gen AI Study Jams session by GDG On Campus at Vignan’s Institute of Information Technology 🚀 introduces participants to Generative AI technologies 🤖. The session includes real-world examples 🌍, offering insights into AI applications and tools.",
+    participants: "350",
+    days: 1,
+    hashtags: ["genai", "gdg"],
+    rvsplink: "https://qrfy.io/ymEF1PkSHE",
+  },
 ];
