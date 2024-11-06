@@ -205,10 +205,38 @@ const Team = () => {
       }
     };
   }, [matches]);
+
+  useEffect(() => {
+    if (!matches || !outerRef.current || !innerRef.current) return;
+
+    const outerDiv = outerRef.current;
+    const innerDiv = innerRef.current;
+
+    const handleScroll = () => {
+      const outerRect = outerDiv.getBoundingClientRect();
+      const innerHeight = innerDiv.scrollHeight;
+
+      if (outerRect.top <= 0 && outerRect.bottom >= innerHeight) {
+        // Outer div is sticky and inner scroll should happen
+        outerDiv.classList.add("sticky");
+        innerDiv.classList.add("scrolling");
+      } else {
+        // Exit sticky mode
+        outerDiv.classList.remove("sticky");
+        innerDiv.classList.remove("scrolling");
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [matches]);
   
 
   return (
-    <div ref={outerRef} className="relative font-GSD_Regular w-full m-auto h-[calc(100vh-65px)] bg-[#D8E2F9] px-6 py-12 flex flex-col gap-4 md:gap-0 md:flex-row overflow-auto md:overflow-hidden">
+    <div ref={outerRef} className="md:sticky top-0 relative font-GSD_Regular w-full h-screen m-auto bg-[#D8E2F9] px-6 py-12 flex flex-col gap-4 md:gap-0 md:flex-row overflow-auto md:overflow-hidden">
       <div className="md:w-1/2">
         <p className="text-center md:text-start text-4xl md:text-5xl font-bold">MEET OUR TEAM:</p>
         {matches && <img className="absolute left-0 bottom-0 w-[70%]" src={MOTImage} alt="image" />}
