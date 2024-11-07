@@ -22,8 +22,10 @@ function IndividualPastEvent() {
           </div>
           <div className="flex flex-col justify-center">
             {/* Event Details */}
-            <h2 className="text-3xl font-bold mb-4">{eventData.title}</h2>
-            <p className="text-lg mb-6">{eventData.content}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              {eventData.title}
+            </h2>
+            <p className="text-base md:text-lg mb-6">{eventData.content}</p>
             <div className="grid grid-cols-2 gap-4 text-center mb-4">
               <div>
                 <h4 className="text-xl font-semibold">
@@ -65,7 +67,11 @@ function IndividualPastEvent() {
             <ul className="list-disc list-inside">
               {eventData.resources.map((resource, index) => (
                 <li key={index}>
-                  <a href={resource.link} target="blank" className="text-blue-500">
+                  <a
+                    href={resource.link}
+                    target="blank"
+                    className="text-blue-500"
+                  >
                     {resource.name}
                   </a>
                 </li>

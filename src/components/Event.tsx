@@ -18,6 +18,13 @@ interface CardProps {
   date: string;
   title: string;
   content: string;
+  participants: string;
+  days: number;
+  hashtags: Array<string>;
+  labs?: string;
+  resources?: Array<{ name: string; link: string }>;
+  timeline: string;
+  rvsplink?: string;
 }
 
 const NewEvents = () => {
@@ -192,8 +199,8 @@ const Card: React.FC<{ card: CardProps; index: number }> = ({
             </button>
           </Link>
         </div>
-        {card.urlid !== "PastEvents" && (
-          <Link to="https://shorturl.at/5oxr6">
+        {card.urlid !== "PastEvents" && card.rvsplink && (
+          <Link to={card.rvsplink}>
             <button className="bg-blue-500 text-white text-center px-6 py-1 rounded backdrop-blur transition-colors hover:bg-blue-700 hover:scale-105">
               RSVP
             </button>

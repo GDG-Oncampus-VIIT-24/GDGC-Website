@@ -56,7 +56,7 @@ export const upcomingCards: CardProps[] = [
   {
     urlid: "UpcomingEvents",
     title: "Intro to Gen AI",
-    logo: "/images/genai_speakers.jpg",
+    logo: "/images/genai_speakers_logo.jpg",
     image: "/images/genai_speakers.jpg",
     timeline: "Nov 7th 2024",
     date: "2024-11-7",

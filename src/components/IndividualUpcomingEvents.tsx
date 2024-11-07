@@ -7,8 +7,6 @@ function IndividualUpcomingEvent() {
   const index = parseInt(id || "0", 10);
   const eventData = upcomingCards[index];
 
-  console.log("Rendering IndividualEvent with id:", id);
-
   return (
     <TracingBeam className="px-6">
       <div className="max-w-4xl mx-auto antialiased pt-8 pb-8">
@@ -16,15 +14,17 @@ function IndividualUpcomingEvent() {
           <div>
             {/* Main Event Image */}
             <img
-              src={eventData.logo}
+              src={eventData.image}
               alt="Hack2Code"
-              className="w-full h-auto aspect-square object-cover rounded-lg border border-red-900"
+              className="w-full h-auto  object-cover rounded-lg border border-red-900"
             />
           </div>
           <div className="flex flex-col justify-center">
             {/* Event Details */}
-            <h2 className="text-3xl font-bold mb-4">{eventData.title}</h2>
-            <p className="text-lg mb-6">{eventData.content}</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              {eventData.title}
+            </h2>
+            <p className="text-base md:text-lg mb-6">{eventData.content}</p>
             <div className="grid grid-cols-2 gap-4 text-center mb-4">
               <div>
                 <h4 className="text-xl font-semibold">
@@ -52,19 +52,12 @@ function IndividualUpcomingEvent() {
               ))}
             </div>
 
-            {eventData.rvsplink ? (
+            {eventData.rvsplink && (
               <Link to={eventData.rvsplink}>
                 <button className="bg-blue-500 hover:bg-blue-700 text-white md:w-[10vw] py-2 rounded-lg w-[20vw]">
                   RSVP
                 </button>
               </Link>
-            ) : (
-              <button
-                className="bg-gray-400 text-white md:w-[10vw] py-2 rounded-lg w-[20vw]"
-                disabled
-              >
-                RSVP
-              </button>
             )}
           </div>
         </div>
