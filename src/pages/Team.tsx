@@ -203,7 +203,7 @@ const Team = () => {
         <p className="text-center md:text-start text-4xl md:text-5xl font-bold">MEET OUR TEAM:</p>
         {matches && <img className="absolute left-0 bottom-0 w-[70%]" src={MOTImage} alt="image" />}
       </div>
-      <div ref={innerRef} className="z-10 w-full md:w-1/2 flex flex-col gap-2 md:overflow-y-scroll p-2 no-scrollbar">
+      <div ref={innerRef} className="overscroll-auto z-10 w-full md:w-1/2 flex flex-col gap-2 md:overflow-y-scroll p-2 no-scrollbar">
         {Members.map((member, index) => <TeamMember key={index} {...member} />)}
       </div>
     </div>
