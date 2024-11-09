@@ -131,10 +131,6 @@ const Card: React.FC<{ card: CardProps; index: number }> = ({
   const today = new Date();
   const isLive = eventDate.toDateString() === today.toDateString();
 
-  console.log("Card: ",card)
-  console.log(index)
-  console.log(eventDate, today)
-
   return (
     <motion.div
       ref={ref}
