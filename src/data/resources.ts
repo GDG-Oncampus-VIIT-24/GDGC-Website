@@ -46,15 +46,8 @@ export const pastCards: CardProps[] = [
       { name: "Linkedin", link: "https://www.linkedin.com/" },
     ],
   },
-  // { title: "Past Event 2", logo: "logo.png", image: "/images/devfest.png", date: "Aug 15th 2024", content: "Details of past event 2"},
-  // { title: "Past Event 3", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 3"},
-  // { title: "Past Event 4", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 4" },
-  // { title: "Past Event 5", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 5"},
-];
-
-export const upcomingCards: CardProps[] = [
   {
-    urlid: "UpcomingEvents",
+    urlid: "PastEvents",
     title: "Intro to Gen AI",
     logo: "/images/genai_speakers_logo.jpg",
     image: "/images/genai_speakers.jpg",
@@ -65,6 +58,19 @@ export const upcomingCards: CardProps[] = [
     participants: "350",
     days: 1,
     hashtags: ["genai", "gdg"],
-    rvsplink: "https://qrfy.io/ymEF1PkSHE",
+    resources: [
+      {
+        name: "Article",
+        link: "https://medium.com/@lakshmisriramadari1427/gemini-ai-with-socket-io-in-nodejs-dff232348619",
+      },
+      { name: "Sample Project", link: "https://geminiapi-9rsv.onrender.com/" },
+    ],
   },
+  // { title: "Past Event 2", logo: "logo.png", image: "/images/devfest.png", date: "Aug 15th 2024", content: "Details of past event 2"},
+  // { title: "Past Event 3", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 3"},
+  // { title: "Past Event 4", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 4" },
+  // { title: "Past Event 5", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 5"},
+];
+
+export const upcomingCards: CardProps[] = [
 ];
