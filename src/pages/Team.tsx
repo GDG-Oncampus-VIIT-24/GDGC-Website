@@ -16,7 +16,7 @@ import ShirinPic from "../assets/shirin.jpeg";
 import GiriPic from "../assets/giri.jpg";
 import VarshithaPic from "../assets/varshitha.jpg";
 import VivekPic from "../assets/vivek.jpg";
-import ThanushaPic from "../assets/thanusha.jpeg";
+import ThanushaPic from "../assets/thanusha.jpg";
 
 import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
