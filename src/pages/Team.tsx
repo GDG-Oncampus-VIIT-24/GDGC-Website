@@ -74,14 +74,14 @@ const Team = () => {
     },
     {
       MemberName: "Guru Nikhil",
-      Role: "Web Developer Lead",
+      Role: "Web Development Lead",
       Image: NikhilPic,
       GithubLink: "https://github.com/MGuruNikhil",
       LinkedinLink: "https://www.linkedin.com/in/gurunikhilm/",
     },
     {
       MemberName: "Sowmya",
-      Role: "Web Developer Lead",
+      Role: "Web Development Lead",
       Image: SowmyaPic,
       GithubLink: "https://www.linkedin.com/in/sowmya-musti-531715257/",
       LinkedinLink: "https://github.com/m-sowmya7",
