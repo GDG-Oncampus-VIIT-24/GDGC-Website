@@ -3,7 +3,7 @@ import LinkedinIcon from '../assets/linkedin.png';
 
 const TeamMember = ({MemberName, Role, Image, GithubLink, LinkedinLink} : {MemberName: string, Role: string, Image: any, GithubLink: string, LinkedinLink: string}) => {
   return (
-    <div className="team-member bg-white md:h-[300px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px] rounded-3xl border-[1px] border-black border-solid p-6 flex flex-col-reverse md:flex-row items-center justify-between gap-4 lg:gap-8">
+    <div className="team-member m-6 z-10 bg-white md:h-[300px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px] rounded-3xl border-[1px] border-black border-solid p-6 flex flex-col-reverse md:flex-row items-center justify-between gap-4 lg:gap-8">
       
       {/* Info section */}
       <div className="info flex flex-col justify-between w-full md:w-[45%] h-auto md:h-[96%] text-center md:text-left">
