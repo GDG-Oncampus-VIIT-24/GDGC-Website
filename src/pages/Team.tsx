@@ -165,8 +165,19 @@ const Team = () => {
     };
   }, [matches]);
 
+  useEffect(() => {
+    if (parentDiv.current) {
+      // Ensure the height is set initially if not already set
+      if (!parentDiv.current.style.height) {
+        parentDiv.current.style.height = `${parentDiv.current.offsetHeight}px`;
+      }
+      const currentHeight = parseFloat(parentDiv.current.style.height);
+      parentDiv.current.style.height = `calc(${currentHeight}px - 100vh)`;
+    }
+  }, [parentDiv]);
+
   return (
-    <div ref={parentDiv} className="relative font-GSD_Regular w-full flex flex-col bg-[#D8E2F9] md:h-[calc(6189px-100vh)]">
+    <div ref={parentDiv} className="relative font-GSD_Regular w-full flex flex-col bg-[#D8E2F9]">
       <div className="md:sticky md:top-0 md:left-0 md:flex md:flex-col md:justify-between md:min-h-screen">
         <p className="pl-6 pt-12 text-center md:text-start text-4xl md:text-5xl font-bold">MEET OUR TEAM:</p>
         {matches && <img className="w-[70%]" src={MOTImage} alt="image" />}
