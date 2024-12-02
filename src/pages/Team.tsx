@@ -166,15 +166,30 @@ const Team = () => {
   }, [matches]);
 
   useEffect(() => {
-    if (parentDiv.current) {
-      // Ensure the height is set initially if not already set
-      if (!parentDiv.current.style.height) {
-        parentDiv.current.style.height = `${parentDiv.current.offsetHeight}px`;
+    const updateHeight = () => {
+      if (parentDiv.current && matches) {
+        // Ensure the height is set initially if not already set
+        if (!parentDiv.current.style.height) {
+          parentDiv.current.style.height = `${parentDiv.current.offsetHeight}px`;
+        }
+        const currentHeight = parseFloat(parentDiv.current.style.height);
+        parentDiv.current.style.height = `calc(${currentHeight}px - 100vh)`;
+      } else {
+        parentDiv.current?.style.removeProperty('height');
       }
-      const currentHeight = parseFloat(parentDiv.current.style.height);
-      parentDiv.current.style.height = `calc(${currentHeight}px - 100vh)`;
-    }
-  }, [parentDiv]);
+    };
+  
+    // Run the updateHeight function initially
+    updateHeight();
+  
+    // Add event listener for window resize
+    window.addEventListener('resize', updateHeight);
+  
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, [parentDiv, matches]);
 
   return (
     <div ref={parentDiv} className="relative font-GSD_Regular w-full flex flex-col bg-[#D8E2F9]">
