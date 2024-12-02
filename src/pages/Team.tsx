@@ -19,14 +19,11 @@ import VivekPic from "../assets/vivek.jpg";
 import ThanushaPic from "../assets/thanusha.jpg";
 
 import { useEffect, useRef, useState } from "react";
-import Lenis from "lenis";
 
 const Team = () => {
 
   const [matches, setMatches] = useState(window.matchMedia("(min-width: 768px)").matches);
-  const outerRef = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
-  const lenisRef = useRef<Lenis | null>(null);
+  const parentDiv = useRef<HTMLDivElement>(null);
 
   const Members: Array<{
     MemberName: string;
@@ -74,14 +71,14 @@ const Team = () => {
     },
     {
       MemberName: "Guru Nikhil",
-      Role: "Web Developer Lead",
+      Role: "Web Development Lead",
       Image: NikhilPic,
       GithubLink: "https://github.com/MGuruNikhil",
       LinkedinLink: "https://www.linkedin.com/in/gurunikhilm/",
     },
     {
       MemberName: "Sowmya",
-      Role: "Web Developer Lead",
+      Role: "Web Development Lead",
       Image: SowmyaPic,
       GithubLink: "https://www.linkedin.com/in/sowmya-musti-531715257/",
       LinkedinLink: "https://github.com/m-sowmya7",
@@ -162,58 +159,45 @@ const Team = () => {
   useEffect(() => {
     const handler = (e: MediaQueryListEvent) => setMatches(e.matches);
     window.matchMedia("(min-width: 768px)").addEventListener('change', handler);
-
+  
     return () => {
       window.matchMedia("(min-width: 768px)").removeEventListener('change', handler);
     };
   }, [matches]);
 
   useEffect(() => {
-    const handler = (e: MediaQueryListEvent) => setMatches(e.matches);
-    window.matchMedia("(min-width: 768px)").addEventListener('change', handler);
-  
-    const targetElement = matches ? innerRef.current : outerRef.current;
-  
-    if (lenisRef.current) {
-      lenisRef.current.destroy();
-      lenisRef.current = null;
-    }
-  
-    if (targetElement) {
-      const lenis = new Lenis({
-        wrapper: targetElement,
-        content: targetElement.firstChild as HTMLElement,
-        lerp: 0.05,
-        duration: 2.0,
-      });
-  
-      lenisRef.current = lenis;
-  
-      const raf = (time: number) => {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      };
-  
-      requestAnimationFrame(raf);
-    }
-  
-    return () => {
-      window.matchMedia("(min-width: 768px)").removeEventListener('change', handler);
-  
-      if (lenisRef.current) {
-        lenisRef.current.destroy();
+    const updateHeight = () => {
+      if (parentDiv.current && matches) {
+        // Ensure the height is set initially if not already set
+        if (!parentDiv.current.style.height) {
+          parentDiv.current.style.height = `${parentDiv.current.offsetHeight}px`;
+        }
+        const currentHeight = parseFloat(parentDiv.current.style.height);
+        parentDiv.current.style.height = `calc(${currentHeight}px - 100vh)`;
+      } else {
+        parentDiv.current?.style.removeProperty('height');
       }
     };
-  }, [matches]);
   
+    // Run the updateHeight function initially
+    updateHeight();
+  
+    // Add event listener for window resize
+    window.addEventListener('resize', updateHeight);
+  
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, [parentDiv, matches]);
 
   return (
-    <div ref={outerRef} className="relative font-GSD_Regular w-full m-auto h-[calc(100vh-65px)] bg-[#D8E2F9] px-6 py-12 flex flex-col gap-4 md:gap-0 md:flex-row overflow-auto md:overflow-hidden">
-      <div className="md:w-1/2">
-        <p className="text-center md:text-start text-4xl md:text-5xl font-bold">MEET OUR TEAM:</p>
-        {matches && <img className="absolute left-0 bottom-0 w-[70%]" src={MOTImage} alt="image" />}
+    <div ref={parentDiv} className="relative font-GSD_Regular w-full flex flex-col bg-[#D8E2F9]">
+      <div className="md:sticky md:top-0 md:left-0 md:flex md:flex-col md:justify-between md:min-h-screen">
+        <p className="pl-6 pt-12 text-center md:text-start text-4xl md:text-5xl font-bold">MEET OUR TEAM:</p>
+        {matches && <img className="w-[70%]" src={MOTImage} alt="image" />}
       </div>
-      <div ref={innerRef} className="z-10 w-full md:w-1/2 flex flex-col gap-2 md:overflow-y-scroll p-2 no-scrollbar">
+      <div className="md:translate-y-[-100vh] md:w-[50%] md:place-self-end">
         {Members.map((member, index) => <TeamMember key={index} {...member} />)}
       </div>
     </div>
