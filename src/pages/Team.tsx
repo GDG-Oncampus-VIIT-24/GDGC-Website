@@ -80,8 +80,8 @@ const Team = () => {
       MemberName: "Sowmya",
       Role: "Web Development Lead",
       Image: SowmyaPic,
-      GithubLink: "https://www.linkedin.com/in/sowmya-musti-531715257/",
-      LinkedinLink: "https://github.com/m-sowmya7",
+      GithubLink: "https://github.com/m-sowmya7",
+      LinkedinLink: "https://www.linkedin.com/in/sowmya-musti-531715257/",
     },
     {
       MemberName: "Koushik",
