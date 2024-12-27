@@ -33,7 +33,7 @@ export const pastCards: CardProps[] = [
     urlid: "PastEvents",
     title: "Inauguration",
     logo: "/images/inaugurationlogo.jpg",
-    image: "/images/inauguration.png",
+    image: "/images/inauguration.webp",
     timeline: "Oct 16th 2024",
     date: "2024-10-16",
     content:
@@ -50,7 +50,7 @@ export const pastCards: CardProps[] = [
     urlid: "PastEvents",
     title: "Intro to Gen AI",
     logo: "/images/genai_speakers_logo.jpg",
-    image: "/images/genai_speakers.jpg",
+    image: "/images/genai_speakers.webp",
     timeline: "Nov 7th 2024",
     date: "2024-11-7",
     content:
