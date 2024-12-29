@@ -122,11 +122,11 @@ function Footer() {
           </li>
           <li>
             <Link
-              to="https://www.linkedin.com/in/gdsc-vignan-s-iit-vignan-s-institute-of-information-technology-1940a9298/"
+              to="https://www.linkedin.com/company/gdg-oncampus-viit/posts/?feedView=all"
               className="linkWrap style-4"
               target="_blank"
               rel="noopener noreferrer"
-              style={
+              style={https://www.linkedin.com/in/gdg-oncampus-viit/</li>
                 {
                   "--line": "#34a853",
                   "--color": "#34a853",
