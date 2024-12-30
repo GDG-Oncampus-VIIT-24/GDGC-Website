@@ -1,7 +1,7 @@
 interface CardProps {
   urlid: string;
-  logo?: string;
-  image: string;
+  outer_logo?: string;
+  inner_image: string;
   date: string;
   title: string;
   content: string;
@@ -18,8 +18,8 @@ export const pastCards: CardProps[] = [
   {
     urlid: "PastEvents",
     title: "GenAI Study Jams",
-    logo: "/images/genaistudy.jpg",
-    image: "/images/GENai.jpg",
+    outer_logo: "/images/genaistudy.jpg",
+    inner_image: "/images/GENai.jpg",
     timeline: "Oct 11th 2024 - Nov 11th 2024",
     date: "2024-10-11 to 2024-11-11",
     content:
@@ -32,8 +32,8 @@ export const pastCards: CardProps[] = [
   {
     urlid: "PastEvents",
     title: "Inauguration",
-    logo: "/images/inaugurationlogo.jpg",
-    image: "/images/inauguration.webp",
+    outer_logo: "/images/inaugurationlogo.jpg",
+    inner_image: "/images/inauguration.webp",
     timeline: "Oct 16th 2024",
     date: "2024-10-16",
     content:
@@ -49,8 +49,8 @@ export const pastCards: CardProps[] = [
   {
     urlid: "PastEvents",
     title: "Intro to Gen AI",
-    logo: "/images/genai_speakers_logo.jpg",
-    image: "/images/genai_speakers.webp",
+    outer_logo: "/images/genai_speakers_logo.jpg",
+    inner_image: "/images/genai_speakers.webp",
     timeline: "Nov 7th 2024",
     date: "2024-11-7",
     content:
@@ -73,4 +73,17 @@ export const pastCards: CardProps[] = [
 ];
 
 export const upcomingCards: CardProps[] = [
+  {
+    urlid: "UpcomingEvents",
+    title: "Tech Winter Break",
+    outer_logo: "/images/Tech_Winter_Break_logo.webp",
+    inner_image: "/images/Tech_Winter_Break_poster.webp",
+    timeline: "2024-12-31",
+    date: "2024-12-31",
+    content:
+      "Kickstart your web development career in 2025 with this exciting session! Explore the roadmap, master fundamentals, and discover top resources to build a strong foundation. Don’t miss it—start your journey today!",
+    participants: "200",
+    days: 1,
+    hashtags: ["techwinterbreak", "web", "angular", "flutter", "android"],
+  },
 ];

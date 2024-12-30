@@ -14,7 +14,7 @@ function IndividualUpcomingEvent() {
           <div>
             {/* Main Event Image */}
             <img
-              src={eventData.image}
+              src={eventData.inner_image}
               alt="Hack2Code"
               className="w-full h-auto  object-cover rounded-lg border border-red-900"
             />

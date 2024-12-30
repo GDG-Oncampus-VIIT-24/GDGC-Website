@@ -13,8 +13,8 @@ import { upcomingCards, pastCards } from "../data/resources";
 
 interface CardProps {
   urlid: string;
-  logo?: string;
-  image: string;
+  outer_logo?: string;
+  inner_image: string;
   date: string;
   title: string;
   content: string;
@@ -160,7 +160,7 @@ const Card: React.FC<{ card: CardProps; index: number }> = ({
       >
         <img
           className="object-cover w-full h-full overflow-hidden rounded-[20px] border-black border-2"
-          src={card.logo}
+          src={card.outer_logo}
           alt={card.title}
         />
       </div>

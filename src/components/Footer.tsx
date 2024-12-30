@@ -126,10 +126,10 @@ function Footer() {
               className="linkWrap style-4"
               target="_blank"
               rel="noopener noreferrer"
-              style={https://www.linkedin.com/in/gdg-oncampus-viit/</li>
+              style={
                 {
-                  "--line": "#34a853",
-                  "--color": "#34a853",
+                  "--line": "#fbbc04",
+                  "--color": "#fbbc04",
                 } as React.CSSProperties
               }
             >
