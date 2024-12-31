@@ -62,19 +62,26 @@ function IndividualPastEvent() {
           </div>
         </div>
 
-        {eventData.resources && (
+        {eventData.resources && eventData.resources.length > 0 && (
           <div className="mt-10">
             <h3 className="text-xl font-semibold mb-4">Resources Mentioned:</h3>
             <ul className="list-disc list-inside">
               {eventData.resources.map((resource, index) => (
                 <li key={index}>
-                  <a
-                    href={resource.link}
-                    target="blank"
-                    className="text-blue-500"
-                  >
-                    {resource.name}
-                  </a>
+                  {resource.link ? (
+                    <a
+                      href={resource.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500"
+                    >
+                      {resource.name || "Unnamed Resource"}
+                    </a>
+                  ) : (
+                    <span>
+                      {resource.name || "Unnamed Resource (No Link Available)"}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>
