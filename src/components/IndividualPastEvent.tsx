@@ -17,7 +17,7 @@ function IndividualPastEvent() {
             <img
               loading="lazy"
               src={eventData.inner_image}
-              alt="Hack2Code"
+              alt={eventData.alt}
               className="w-full h-auto  object-cover rounded-lg border border-red-900"
             />
           </div>

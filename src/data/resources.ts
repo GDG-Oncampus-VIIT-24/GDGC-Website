@@ -2,6 +2,7 @@ interface CardProps {
   urlid: string;
   outer_logo?: string;
   inner_image: string;
+  alt: string;
   date: string;
   title: string;
   content: string;
@@ -18,6 +19,7 @@ export const pastCards: CardProps[] = [
   {
     urlid: "PastEvents",
     title: "GenAI Study Jams",
+    alt: "GENAI Study Jams",
     outer_logo: "/images/genaistudy.jpg",
     inner_image: "/images/GENai.jpg",
     timeline: "Oct 11th 2024 - Nov 11th 2024",
@@ -32,6 +34,7 @@ export const pastCards: CardProps[] = [
   {
     urlid: "PastEvents",
     title: "Inauguration",
+    alt: "Inauguration",
     outer_logo: "/images/inaugurationlogo.jpg",
     inner_image: "/images/inauguration.webp",
     timeline: "Oct 16th 2024",
@@ -49,6 +52,7 @@ export const pastCards: CardProps[] = [
   {
     urlid: "PastEvents",
     title: "Intro to Gen AI",
+    alt: "Intro to Gen AI",
     outer_logo: "/images/genai_speakers_logo.jpg",
     inner_image: "/images/genai_speakers.webp",
     timeline: "Nov 7th 2024",
@@ -76,6 +80,7 @@ export const upcomingCards: CardProps[] = [
   {
     urlid: "UpcomingEvents",
     title: "Tech Winter Break",
+    alt: "Tech Winter Break",
     outer_logo: "/images/Tech_Winter_Break_logo.webp",
     inner_image: "/images/Tech_Winter_Break_poster.webp",
     timeline: "2024-12-31",
@@ -85,5 +90,6 @@ export const upcomingCards: CardProps[] = [
     participants: "200",
     days: 1,
     hashtags: ["techwinterbreak", "web", "angular", "flutter", "android"],
+    rvsplink: "https://tinytag.onrender.com/ZXP4",
   },
 ];
