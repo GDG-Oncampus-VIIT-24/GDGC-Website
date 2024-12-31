@@ -10,7 +10,7 @@ interface CardProps {
   days: number;
   hashtags: Array<string>;
   labs?: string;
-  resources?: Array<{ name: string; link: string }>;
+  resources?: Array<{ name?: string; link?: string }>;
   timeline: string;
   rvsplink?: string;
 }
@@ -70,15 +70,8 @@ export const pastCards: CardProps[] = [
       { name: "Sample Project", link: "https://geminiapi-9rsv.onrender.com/" },
     ],
   },
-  // { title: "Past Event 2", logo: "logo.png", image: "/images/devfest.png", date: "Aug 15th 2024", content: "Details of past event 2"},
-  // { title: "Past Event 3", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 3"},
-  // { title: "Past Event 4", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 4" },
-  // { title: "Past Event 5", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 5"},
-];
-
-export const upcomingCards: CardProps[] = [
   {
-    urlid: "UpcomingEvents",
+    urlid: "PastEvents",
     title: "Tech Winter Break",
     alt: "Tech Winter Break",
     outer_logo: "/images/Tech_Winter_Break_logo.webp",
@@ -90,6 +83,20 @@ export const upcomingCards: CardProps[] = [
     participants: "200",
     days: 1,
     hashtags: ["techwinterbreak", "web", "angular", "flutter", "android"],
-    rvsplink: "https://tinytag.onrender.com/ZXP4",
+    resources: [
+      { name: "Pomodoro Timer Chrome Extension" },
+      { name: "I love PDF clone using their API" },
+      { name: "Chat Application" },
+      { name: "Github Profile Search" },
+      { name: "Caption Generator" },
+    ],
   },
+  // { title: "Past Event 2", logo: "logo.png", image: "/images/devfest.png", date: "Aug 15th 2024", content: "Details of past event 2"},
+  // { title: "Past Event 3", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 3"},
+  // { title: "Past Event 4", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 4" },
+  // { title: "Past Event 5", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 5"},
+];
+
+export const upcomingCards: CardProps[] = [
+  
 ];
