@@ -91,10 +91,6 @@ export const pastCards: CardProps[] = [
       { name: "Caption Generator" },
     ],
   },
-  // { title: "Past Event 2", logo: "logo.png", image: "/images/devfest.png", date: "Aug 15th 2024", content: "Details of past event 2"},
-  // { title: "Past Event 3", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 3"},
-  // { title: "Past Event 4", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 4" },
-  // { title: "Past Event 5", logo: "logo.png", image: "/images/devfest.png", date: "July 30th 2024", content: "Details of past event 5"},
 ];
 
 export const upcomingCards: CardProps[] = [

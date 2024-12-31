@@ -15,6 +15,7 @@ interface CardProps {
   urlid: string;
   outer_logo?: string;
   inner_image: string;
+  alt: string;
   date: string;
   title: string;
   content: string;
@@ -22,7 +23,7 @@ interface CardProps {
   days: number;
   hashtags: Array<string>;
   labs?: string;
-  resources?: Array<{ name: string; link: string }>;
+  resources?: Array<{ name?: string; link?: string }>;
   timeline: string;
   rvsplink?: string;
 }
