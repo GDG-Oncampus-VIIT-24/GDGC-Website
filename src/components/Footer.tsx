@@ -122,7 +122,7 @@ function Footer() {
           </li>
           <li>
             <Link
-              to="https://www.linkedin.com/company/gdg-oncampus-viit/posts/?feedView=all"
+              to="http://www.linkedin.com/in/gdg-oncampus-viit"
               className="linkWrap style-4"
               target="_blank"
               rel="noopener noreferrer"
