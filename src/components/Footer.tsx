@@ -71,104 +71,106 @@ function Footer() {
         <h2 className="font-GSD_Regular text-3xl md:text-[4vw] mb-12 text-center md:text-left border-b-[3.5px] border-black pb-1.5">
           SOCIALS
         </h2>
-        <ul className="space-y-4 w-full flex flex-col items-center md:items-start">
-          <li>
-            <Link
-              to="https://github.com/GDG-Oncampus-VIIT-24"
-              className="linkWrap style-4"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={
-                {
-                  "--line": "#ea4335",
-                  "--color": "#ea4335",
-                } as React.CSSProperties
-              }
-            >
-              <span className="text-red-500">GITHUB</span>
-              <svg viewBox="0 0 13 20">
-                <polyline
-                  points="0.5 19.5 3 19.5 12.5 10 3 0.5"
-                  fill="none"
-                  stroke="#ea4335"
-                  strokeWidth="1"
-                />
-              </svg>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="https://mail.google.com/mail/?view=cm&fs=1&to=dscviit@gmail.com"
-              className="linkWrap style-4"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={
-                {
-                  "--line": "#4285f4",
-                  "--color": "#4285f4",
-                } as React.CSSProperties
-              }
-            >
-              <span className="text-blue-500">EMAIL</span>
-              <svg viewBox="0 0 13 20">
-                <polyline
-                  points="0.5 19.5 3 19.5 12.5 10 3 0.5"
-                  fill="none"
-                  stroke="#4285f4"
-                  strokeWidth="1"
-                />
-              </svg>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="https://www.linkedin.com/company/gdg-oncampus-viit/posts/?feedView=all"
-              className="linkWrap style-4"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={
-                {
-                  "--line": "#fbbc04",
-                  "--color": "#fbbc04",
-                } as React.CSSProperties
-              }
-            >
-              <span className="text-green-500">LINKEDIN</span>
-              <svg viewBox="0 0 13 20">
-                <polyline
-                  points="0.5 19.5 3 19.5 12.5 10 3 0.5"
-                  fill="none"
-                  stroke="#34a853"
-                  strokeWidth="1"
-                />
-              </svg>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="https://www.instagram.com/gdgc_viit/"
-              className="linkWrap style-4"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={
-                {
-                  "--line": "#fbbc04",
-                  "--color": "#fbbc04",
-                } as React.CSSProperties
-              }
-            >
-              <span className="text-yellow-500">INSTAGRAM</span>
-              <svg viewBox="0 0 13 20">
-                <polyline
-                  points="0.5 19.5 3 19.5 12.5 10 3 0.5"
-                  fill="none"
-                  stroke="#fbbc04"
-                  strokeWidth="1"
-                />
-              </svg>
-            </Link>
-          </li>
-        </ul>
+        <div className="relative">
+          <ul className="space-y-4 relative flex flex-col items-center left-[6%] md:items-start">
+            <li className="instagram">
+              <Link
+                to="https://www.instagram.com/gdgc_viit/"
+                className="linkWrap style-4"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={
+                  {
+                    "--line": "#34a853",
+                    "--color": "#34a853",
+                  } as React.CSSProperties
+                }
+              >
+                <span className="text-green-500">INSTA</span>
+                <svg viewBox="0 0 13 20">
+                  <polyline
+                    points="0.5 19.5 3 19.5 12.5 10 3 0.5"
+                    fill="none"
+                    stroke="#34a853"
+                    strokeWidth="1"
+                  />
+                </svg>
+              </Link>
+            </li>
+            <li className="linkedin">
+              <Link
+                to="https://www.linkedin.com/company/gdg-oncampus-viit/posts/?feedView=all"
+                className="linkWrap style-4"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={
+                  {
+                    "--line": "#4285f4",
+                    "--color": "#4285f4",
+                  } as React.CSSProperties
+                }
+              >
+                <span className="text-blue-500">LINKEDIN</span>
+                <svg viewBox="0 0 13 20">
+                  <polyline
+                    points="0.5 19.5 3 19.5 12.5 10 3 0.5"
+                    fill="none"
+                    stroke="#4285f4"
+                    strokeWidth="1"
+                  />
+                </svg>
+              </Link>
+            </li>
+            <li className="github">
+              <Link
+                to="https://github.com/GDG-Oncampus-VIIT-24"
+                className="linkWrap style-4"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={
+                  {
+                    "--line": "#ea4335",
+                    "--color": "#ea4335",
+                  } as React.CSSProperties
+                }
+              >
+                <span className="text-red-500">GITHUB</span>
+                <svg viewBox="0 0 13 20">
+                  <polyline
+                    points="0.5 19.5 3 19.5 12.5 10 3 0.5"
+                    fill="none"
+                    stroke="#ea4335"
+                    strokeWidth="1"
+                  />
+                </svg>
+              </Link>
+            </li>
+            <li className="email">
+              <Link
+                to="https://mail.google.com/mail/?view=cm&fs=1&to=dscviit@gmail.com"
+                className="linkWrap style-4"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={
+                  {
+                    "--line": "#fbbc04",
+                    "--color": "#fbbc04",
+                  } as React.CSSProperties
+                }
+              >
+                <span className="text-yellow-500">EMAIL</span>
+                <svg viewBox="0 0 13 20">
+                  <polyline
+                    points="0.5 19.5 3 19.5 12.5 10 3 0.5"
+                    fill="none"
+                    stroke="#fbbc04"
+                    strokeWidth="1"
+                  />
+                </svg>
+              </Link>
+            </li>
+          </ul>
+        </div>
         <div className="mt-8">
           <Link
             to="/feedback"
@@ -182,7 +184,7 @@ function Footer() {
       {/* Copyright Section */}
       <div className="relative bottom-0 border-t border-black w-full bg-white py-4 px-[5vw] mt-8 md:mt-12">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-gray-700 text-sm md:text-base">2024 ©GDGC VIIT</p>
+          <p className="text-gray-700 text-sm md:text-base">2025 ©GDGC VIIT</p>
           <div className="flex items-center">
             <img
               src={footer_logo}
