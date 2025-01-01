@@ -34,26 +34,32 @@ const NewEvents = () => {
     target: targetRef,
   });
 
-  // scrolling position to -50% in y
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "1%"]);
+    // calculate the upper limit for the scroll animation
+    const noOfCards = upcomingCards.length;
+    const upperLimitDynamic = noOfCards !== 0 ? (((noOfCards - 1) * 100) / noOfCards) + 1 : 1;
+    const upperLimit = "-" + upperLimitDynamic.toString() + "%";
+  
+    const x = useTransform(scrollYProgress, [0, 1], ["1%", upperLimit]);
 
   return (
     <section
       ref={targetRef}
       className="relative pl-2 md:pl-6 pb-14" // remember to keep h-[300vh] always and remove margin too
     >
-      <h2 className="text-4xl font-semibold md:pl-12 pt-16 pb-10 font-GSD_Regular text-grey-700">
-        Upcoming Events:
-      </h2>
-      {/* h-screen */}
-      <div className="sticky top-0 py-14 flex items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-10 md:gap-20">
-          <div className="flex gap-10 md:gap-20">
-            {upcomingCards.map((card, index) => (
-              <Card key={index} card={card} index={index} />
-            ))}
-          </div>
-        </motion.div>
+      <div className="sticky top-0">
+        <h2 className="text-4xl font-semibold md:pl-12 pt-16 pb-10 font-GSD_Regular text-grey-700">
+          Upcoming Events:
+        </h2>
+        {/* h-screen */}
+        <div className="py-14 flex items-center overflow-hidden">
+          <motion.div style={{ x }} className="flex gap-10 md:gap-20">
+            <div className="flex gap-10 md:gap-20">
+              {upcomingCards.map((card, index) => (
+                <Card key={index} card={card} index={index} />
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -65,26 +71,32 @@ const PrevEvents = () => {
     target: targetRef,
   });
 
-  // scrolling position to -50% in y
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"])
+  // calculate the upper limit for the scroll animation
+  const noOfCards = pastCards.length;
+  const upperLimitDynamic = noOfCards !== 0 ? (((noOfCards - 1) * 100) / noOfCards) + 1 : 1;
+  const upperLimit = "-" + upperLimitDynamic.toString() + "%";
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", upperLimit]);
 
   return (
     <section
       ref={targetRef}
-      className="relative h-[110vh] pl-2 md:pl-6 pb-14" // remember to keep h-[300vh] always and remove margin too
+      className="relative h-[200vh] pl-2 md:pl-6 pb-14" // remember to keep h-[300vh] always and remove margin too
     >
-      <h2 className="text-4xl font-semibold md:pl-12 pt-16 pb-10 font-GSD_Regular text-grey-700">
-        Past Events:
-      </h2>
-      {/* h-screen */}
-      <div className="sticky top-0 py-14 flex items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-10 md:gap-20">
-          <div className="flex w-full gap-10 md:gap-20">
-            {pastCards.map((card, index) => (
-              <Card key={index} card={card} index={index} />
-            ))}
-          </div>
-        </motion.div>
+      <div className="sticky top-0">
+        <h2 className="text-4xl font-semibold md:pl-12 pt-16 pb-10 font-GSD_Regular text-grey-700">
+          Past Events:
+        </h2>
+        {/* h-screen */}
+        <div className="py-14 flex items-center overflow-hidden">
+          <motion.div style={{ x }} className="flex gap-10 md:gap-20">
+            <div className="flex w-full gap-10 md:gap-20">
+              {pastCards.map((card, index) => (
+                <Card key={index} card={card} index={index} />
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
