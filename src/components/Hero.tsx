@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { FaRegSquare } from "react-icons/fa6";
 import p1 from "/images/left_kite.svg";
 import p2 from "/images/right_kite.svg";
@@ -11,6 +11,8 @@ import p8 from "/images/react_icon.svg";
 import p9 from "/images/programming.svg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+
+const MemoizedFaRegSquare = memo(FaRegSquare); // Memoizing FaRegSquare
 
 const Hero = () => {
   const [boldLetters, setBoldLetters] = useState(Array(15).fill(true));
@@ -167,9 +169,9 @@ const Hero = () => {
 
       <div className="font-GSD-Regular text-[3.5vw] sm:text-[1vw] w-[90%] sm:w-[85%] flex items-center justify-center mb-8 text-grey-700">
         <span className="px-4 text-grey-700">LEARN</span>
-        <FaRegSquare />
+        <MemoizedFaRegSquare />
         <span className="px-4 text-grey-700 ">GROW</span>
-        <FaRegSquare />
+        <MemoizedFaRegSquare />
         <span className="px-4 text-grey-700">BUILD</span>
       </div>
       <Link to="https://gdg.community.dev/gdg-on-campus-vignans-institute-of-information-technology-visakhapatnam-india/">
@@ -181,4 +183,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);
