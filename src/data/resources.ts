@@ -94,5 +94,18 @@ export const pastCards: CardProps[] = [
 ];
 
 export const upcomingCards: CardProps[] = [
-  
+  {
+    urlid: "UpcomingEvents",
+    title: "Intro to Cloud",
+    alt: "Intro to Cloud",
+    outer_logo: "/images/cloud_banner.jpg",
+    inner_image: "/images/cloud_poster.webp",
+    timeline: "2025-2-21",
+    date: "2025-2-21",
+    content:
+      "Get started with cloud computing and explore how AWS simplifies building, scaling, and managing applications. Learn key concepts, core AWS services like EC2, S3, and Lambda, and how businesses leverage the cloud for efficiency and innovation. 🚀",
+    participants: "200",
+    days: 1,
+    hashtags: ["cloud", "aws"],
+  },
 ];
