@@ -9,16 +9,17 @@ import p6 from "/images/cloud_2.svg";
 import p7 from "/images/cloud_3.svg";
 import p8 from "/images/react_icon.svg";
 import p9 from "/images/programming.svg";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const MemoizedFaRegSquare = memo(FaRegSquare); // Memoizing FaRegSquare
+const MemoizedFaRegSquare = memo(FaRegSquare);
 
 const Hero = () => {
   const [boldLetters, setBoldLetters] = useState(Array(15).fill(true));
   const [direction, setDirection] = useState(true);
   const [vibrate, setVibrate] = useState(false);
 
+  // Title letter animation logic (unchanged)
   useEffect(() => {
     const interval = setInterval(() => {
       setBoldLetters((prev) => {
@@ -44,11 +45,9 @@ const Hero = () => {
             }
           }
         }
-
         return nextBoldLetters;
       });
     }, 300);
-
     return () => clearInterval(interval);
   }, [direction]);
 
@@ -57,7 +56,6 @@ const Hero = () => {
       const timeout = setTimeout(() => {
         setVibrate(false);
       }, 100);
-
       return () => clearTimeout(timeout);
     }
   }, [vibrate]);
@@ -80,71 +78,110 @@ const Hero = () => {
     { letter: "”", color: "text-red-600" },
   ];
 
+  // Scroll-based animation hooks
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
+
   return (
     <motion.div
       initial={{ opacity: 0, translateY: 20 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative w-full min-h-screen font-GSD_Regular flex items-center justify-center flex-col"
+      className="relative w-full min-h-screen font-GSD_Regular flex items-center justify-center flex-col overflow-hidden"
     >
-      {/* Adjust Image Section for Mobile */}
-      <img
+      {/* Left Kite with continuous up/down and left/right motion */}
+      <motion.img
         src={p1}
         alt="left_kite"
+        animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[40%] sm:top-[33%] left-[0%] w-[15vw] sm:w-[10vw]"
       />
-      <img
+
+      {/* Right Kite with continuous up/down and right/left motion */}
+      <motion.img
         src={p2}
         alt="right_kite"
+        animate={{ x: [0, -20, 0], y: [0, -20, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[44%] right-[0%] w-[15vw] sm:w-[10vw]"
       />
-      <img
+
+      {/* Other decorative images combining scroll-based and keyframe animations */}
+      <motion.img
         src={p3}
         alt="planets"
+        style={{ scale }}
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[12%] right-[10%] w-[15vw] sm:w-[8vw]"
       />
-      <img
+      <motion.img
         src={p4}
         alt="boy_sitting"
+        style={{ x: rotate }}
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-[0%] left-[0%] w-[30vw] sm:w-[18vw]"
       />
-      <img
+      <motion.img
         src={p5}
         alt="Cloud_1"
+        style={{ scale }}
+        animate={{ y: [0, 15, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[20%] md:top-[8%] md:left-[40%] w-[40vw] sm:w-[22vw]"
       />
-      <img
+      <motion.img
         src={p6}
         alt="Cloud_2"
+        style={{ rotate }}
+        animate={{ y: [0, 12, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[3%] right-[25%] w-[8vw] sm:w-[3vw]"
       />
-      <img
+      <motion.img
         src={p7}
         alt="Cloud_3"
+        animate={{ y: [0, -15, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[6%] left-[10%] w-[18vw] sm:w-[9vw]"
       />
-      <img
+      <motion.img
         src={p8}
         alt="react_icon"
+        style={{ scale }}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[20%] right-[3%] w-[4vw] sm:w-[2vw] hidden sm:block"
       />
-      <img
+      <motion.img
         src={p8}
         alt="react_icon"
+        style={{ scale }}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[12%] left-[3%] w-[4vw] sm:w-[2vw] hidden sm:block"
       />
-      <img
+      <motion.img
         src={p8}
         alt="react_icon"
+        style={{ scale }}
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[15%] left-[27%] w-[4vw] sm:w-[2vw]"
       />
-      <img
+      <motion.img
         src={p9}
         alt="programming"
+        style={{ rotate }}
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-[0%] right-[0%] w-[30vw] sm:w-[22vw]"
       />
 
-      {/* Title Section with Responsive Text */}
+      {/* Title Section */}
       <div className="text-[9vw] sm:text-[7vw] flex justify-center items-center leading-none mb-0 text-center mt-20 w-[90%] sm:w-[69%] mx-auto">
         {titleLetters.map((item, index) => (
           <span
@@ -162,22 +199,34 @@ const Hero = () => {
       </div>
 
       <div className="font-GSD-Regular text-[4vw] sm:text-[20px] w-[80vw] sm:w-[50vw] leading-none mb-10 text-center text-grey-700">
-        By offering seminars, mentorship initiatives, and forums for exchanging
-        insights, we strive to foster a community that embraces lifelong
-        learning and the sharing of knowledge.
+        By offering seminars, mentorship initiatives, and forums for exchanging insights, we strive to foster a community that embraces lifelong learning and the sharing of knowledge.
       </div>
 
-      <div className="font-GSD-Regular text-[3.5vw] sm:text-[1vw] w-[90%] sm:w-[85%] flex items-center justify-center mb-8 text-grey-700">
+      {/* Animated Icons Row */}
+      <motion.div
+        className="font-GSD-Regular text-[3.5vw] sm:text-[1vw] w-[90%] sm:w-[85%] flex items-center justify-center mb-8 text-grey-700"
+        style={{ scale }}
+      >
         <span className="px-4 text-grey-700">LEARN</span>
-        <MemoizedFaRegSquare />
-        <span className="px-4 text-grey-700 ">GROW</span>
-        <MemoizedFaRegSquare />
+        <motion.div style={{ rotate }}>
+          <MemoizedFaRegSquare />
+        </motion.div>
+        <span className="px-4 text-grey-700">GROW</span>
+        <motion.div style={{ rotate }}>
+          <MemoizedFaRegSquare />
+        </motion.div>
         <span className="px-4 text-grey-700">BUILD</span>
-      </div>
+      </motion.div>
+
+      {/* Animated Call-to-Action Button */}
       <Link to="https://gdg.community.dev/gdg-on-campus-vignans-institute-of-information-technology-visakhapatnam-india/">
-        <button className="h-[7vh] sm:h-[6vh] w-[35vw] sm:w-[8vw] bg-blue-500 text-white rounded-lg text-[4vw] sm:text-[1.5vw] transition-transform duration-300 ease-in-out hover:bg-blue-700 hover:scale-105">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="h-[7vh] sm:h-[6vh] w-[35vw] sm:w-[8vw] bg-blue-500 text-white rounded-lg text-[4vw] sm:text-[1.5vw] transition-transform duration-300 ease-in-out hover:bg-blue-700"
+        >
           Join us
-        </button>
+        </motion.button>
       </Link>
     </motion.div>
   );
