@@ -91,11 +91,8 @@ export const pastCards: CardProps[] = [
       { name: "Caption Generator" },
     ],
   },
-];
-
-export const upcomingCards: CardProps[] = [
   {
-    urlid: "UpcomingEvents",
+    urlid: "PastEvents",
     title: "Intro to Cloud",
     alt: "Intro to Cloud",
     outer_logo: "/images/cloud_banner.jpg",
@@ -108,4 +105,37 @@ export const upcomingCards: CardProps[] = [
     days: 1,
     hashtags: ["cloud", "aws"],
   },
+  {
+    urlid: "PastEvents",
+    title: "IWD Hackthon",
+    alt: "IWD Hackthon",
+    outer_logo: "/images/IWD_logo.jpg",
+    inner_image: "/images/IWD.webp",
+    timeline: "March 24th 2025 - March 25th 2025",
+    date: "2025-3-24 to 2025-3-25",
+    content:
+      "✨ On the occasion of International Women’s Day 2025, we at GDG Oncampus Vignan's IIT were incredibly proud to be a part of something truly inspiring — a 24-hour hackathon with Women Techmakers Vizag and GDG Vizag! 💙💻",
+    participants: "400",
+    days: 2,
+    hashtags: ["women tech makers", "gdg oncampus viit", "hackthon", "24-hour"],
+  },
+  {
+    urlid: "PastEvents",
+    title: "SusHacks",
+    alt: "SusHacks",
+    outer_logo: "/images/sushacks.webp",
+    inner_image: "/images/sushacks.webp",
+    timeline: "April 12th 2025 - April 13th 2025",
+    date: "2025-4-12 to 2025-4-13",
+    content:
+      "✨We at GDG OnCampus VIIT proudly organized SusHacks 2025 — a 26-hour national hackathon at VIIT with 480+ participants, 100+ teams, and innovation across 12 tracks 🌐💡.",
+    participants: "500",
+    days: 2,
+    hashtags: ["sushacks", "gdg oncampus viit", "hackthon", "24-hour"],
+    resources: [{name: "SusHacks", link: "https://www.sushacks.com/"}],
+  },
+];
+
+export const upcomingCards: CardProps[] = [
+  
 ];

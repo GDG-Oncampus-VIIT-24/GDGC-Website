@@ -10,7 +10,6 @@ function Home() {
         <Team />
         <Footer />
       </div>
-      <Hero></Hero>
     </>
   );
 }
