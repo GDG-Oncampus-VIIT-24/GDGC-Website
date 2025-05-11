@@ -1,4 +1,4 @@
-import { useState, useEffect, memo } from "react";
+import { useState, useEffect } from "react";
 import { FaRegSquare } from "react-icons/fa6";
 import p1 from "/images/left_kite.svg";
 import p2 from "/images/right_kite.svg";
@@ -11,8 +11,6 @@ import p8 from "/images/react_icon.svg";
 import p9 from "/images/programming.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-
-const MemoizedFaRegSquare = memo(FaRegSquare);
 
 const Hero = () => {
   const [boldLetters, setBoldLetters] = useState(Array(15).fill(true));
@@ -199,7 +197,9 @@ const Hero = () => {
       </div>
 
       <div className="font-GSD-Regular text-[4vw] sm:text-[20px] w-[80vw] sm:w-[50vw] leading-none mb-10 text-center text-grey-700">
-        By offering seminars, mentorship initiatives, and forums for exchanging insights, we strive to foster a community that embraces lifelong learning and the sharing of knowledge.
+        By offering seminars, mentorship initiatives, and forums for exchanging
+        insights, we strive to foster a community that embraces lifelong
+        learning and the sharing of knowledge.
       </div>
 
       {/* Animated Icons Row */}
@@ -209,11 +209,11 @@ const Hero = () => {
       >
         <span className="px-4 text-grey-700">LEARN</span>
         <motion.div style={{ rotate }}>
-          <MemoizedFaRegSquare />
+          <FaRegSquare />
         </motion.div>
         <span className="px-4 text-grey-700">GROW</span>
         <motion.div style={{ rotate }}>
-          <MemoizedFaRegSquare />
+          <FaRegSquare />
         </motion.div>
         <span className="px-4 text-grey-700">BUILD</span>
       </motion.div>
@@ -232,4 +232,4 @@ const Hero = () => {
   );
 };
 
-export default memo(Hero);
+export default Hero;
