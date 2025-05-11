@@ -1,5 +1,5 @@
 import Home from "./Home"
 import Team from "./Team"
-import Event from "./Event"
+import Events from "./Events"
 
-export {Home, Team, Event}
+export {Home, Team, Events}

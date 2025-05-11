@@ -5,73 +5,10 @@
   color: #0f0f0f;
 }
 
-html,
 body {
-  background: #ffffff;
+  overflow-x: hidden;
 }
 
-.nav {
-  position:fixed;
-  width:100%;
-  display:flex;
-  justify-content: space-between;
-}
-
-.nav-links {
-  display: flex;
-}
-
-.logo,
-.nav-item {
-  padding:1.5em;
-  font-weight:400;
-}
-
-h1 {
-  width:80%;
-  position:absolute;
-  top:47.5%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  text-align:center;
-  font-weight: 900;
-  font-size: 10vw;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.05em;
-}
-
-a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
-  font-size: 13px;
-  font-weight: 400;
-}
-
-.blocks-container {
-  position: fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height: 100vh;
-  display:flex;
-  flex-direction: column;
-  pointer-events: none;
-}
-
-.row {
-  flex: 1;
-  width:100%;
-  display: flex;
-}
-
-.block {
-  position: relative;
-  flex: 1;
-  background: #667067;
-  margin:-0.25px;
-}
 
 .transition-in .block {
   transform-origin: top;
@@ -79,4 +16,170 @@ a {
 
 .transition-out .block {
   transform-origin: bottom;
+}
+
+.team-member .info > div:first-child {
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-member .info > div:last-child {
+  transition: transform 0.3s ease-in-out 0.1s;
+}
+
+.team-member .image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover .info > div:first-child {
+  transform: translateX(3px);
+}
+
+.team-member:hover .info > div:last-child {
+  transform: translateX(3px);
+}
+
+.team-member:hover .image {
+  transform: translateX(3px);
+}
+
+.nav-links {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  position: relative;
+}
+
+.nav-links:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 250ms ease-in-out;
+}
+
+.nav-links:hover:after {
+  transform: scaleX(1);
+}
+
+.linkWrap {
+  display: flex;
+  align-items: center;
+  --line: #646B8C; /* Default color */
+  --color: #2B3044; /* Default color */
+  text-decoration: none;
+  color: var(--color); /* This will use the variable */
+  position: relative;
+
+  span {
+    background-image: linear-gradient(0deg, var(--line) 0%, var(--line) 100%);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: var(--background-size, 100%) 1px;
+    transition: background-size .2s linear var(--background-delay, .15s);
+    font-size: 24px;
+    transform: translateZ(0);
+  }
+
+  svg {
+    vertical-align: top;
+    display: inline;
+    line-height: 1;
+    width: 26px;
+    height: 40px;
+    position: relative;
+    left: -2px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1px;
+    stroke: var(--line); /* This will use the variable */
+    stroke-dasharray: 7.95 30;
+    stroke-dashoffset: var(--stroke-dashoffset, 46);
+    transition: stroke-dashoffset var(--stroke-duration, .15s) var(--stroke-easing, linear) var(--stroke-delay, 0s);
+  }
+
+  &:hover {
+    --background-size: 0%;
+    --background-delay: 0s;
+    --stroke-dashoffset: 26;
+    --stroke-duration: .3s;
+    --stroke-easing: cubic-bezier(.3, 1.5, .5, 1);
+    --stroke-delay: .195s;
+  }
+}
+
+/* Hide scrollbar for WebKit-based browsers (Chrome, Safari) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.companimate {
+  animation: appear linear;
+  animation-timeline: view();  /* This is intended to animate when the element comes into view */
+  animation-range: entry 0% cover 40%; /* Animates when the element covers 40% of the viewport */
+}
+
+.blur-effect {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(1px); /* Adjust the blur amount */
+  background: rgba(255, 255, 255, 0.5); /* Optional: adds a translucent white background */
+  mask-image: linear-gradient(to top, transparent 0%, white 80%);
+}
+
+@keyframes live {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(3.5, 3.5);
+    background-color: rgba(255, 0, 0, 0); /* Corrected color value */
+  }
+}
+
+.live-icon {
+  position: relative;
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  margin-left: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.live-icon:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(238, 232, 232, 0.6); /* Adjusted to use valid RGB */
+  border-radius: 50%;
+  animation: live 2s ease-in-out infinite;
 }

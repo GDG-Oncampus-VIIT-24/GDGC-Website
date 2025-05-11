@@ -12,7 +12,7 @@ const Transition = (Page: React.FC) => {
       <>
         <Page />
 
-        <div className="blocks-container transition-in">
+        <div className="z-50 blocks-container transition-in">
           {Array.from({ length: 10 }).map((_, rowIndex) => (
             <div className="row" key={rowIndex}>
               {Array.from({ length: 11 }).map((_, blockIndex) => (

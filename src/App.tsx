@@ -1,16 +1,15 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Navbar, Footer } from "./components/index.ts"
-import {Home, Team, Event} from "./pages/index.ts"
+import { Navbar, Footer, Articles, FeedbackForm, IndividualPastEvent, IndividualUpcomingEvent } from "./components/index.ts";
+import {Home, Team , Events } from "./pages/index.ts"
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import "./App.css";
 
-import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
 function App() {
   const location = useLocation();
-  useEffect(()=> {
+  useEffect(() => {
     const lenis = new Lenis();
 
     function raf(time: number) {
@@ -19,7 +18,15 @@ function App() {
     }
 
     requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
   })
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top
+  }, [location.pathname]);
 
   return (
     <>
@@ -27,8 +34,19 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route index element={<Home />} />
         <Route path="/team" element={<Team />} />
-        <Route path="/event" element={<Event />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/footer" element={<Footer />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/feedback" element={<FeedbackForm />} />
+        <Route path="/contact" element={<Footer />} />
+        <Route
+          path="/events/PastEvents/:id"
+          element={<IndividualPastEvent />}
+        />
+        <Route
+          path="/events/UpcomingEvents/:id"
+          element={<IndividualUpcomingEvent />}
+        />
       </Routes>
     </>
   );
