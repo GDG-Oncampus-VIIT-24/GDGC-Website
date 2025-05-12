@@ -2,7 +2,7 @@ import Navbar from "./Navbar"
 import Transition from "./Transition"
 import Footer from "./Footer"
 import TeamMember from "./TeamMember"
-import Hero from "./Hero"
+import HeroSection from "./HeroSection"
 import Event from "./Event"
 import Articles from "./Articles"
 import FeedbackForm from "./Feedback"
@@ -14,7 +14,7 @@ export {
   Transition,
   TeamMember,
   Footer,
-  Hero,
+  HeroSection,
   Event,
   Articles,
   FeedbackForm,
