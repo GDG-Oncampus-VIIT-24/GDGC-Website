@@ -1,4 +1,3 @@
-import { TeamMember } from "../components/index";
 import MOTImage from "../assets/mot.svg";
 import HimaPic from "../assets/hima.jpg";
 import SujithPic from "../assets/sujith.jpg";
@@ -18,7 +17,9 @@ import VarshithaPic from "../assets/varshitha.jpg";
 import VivekPic from "../assets/vivek.jpg";
 import ThanushaPic from "../assets/thanusha.jpg";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
+
+const TeamMember = lazy(() => import("../components/TeamMember"));
 
 const Team = () => {
 
@@ -192,16 +193,30 @@ const Team = () => {
   }, [parentDiv, matches]);
 
   return (
-    <div ref={parentDiv} className="relative font-GSD_Regular w-full flex flex-col bg-[#D8E2F9]">
+    <div
+      ref={parentDiv}
+      className="relative font-GSD_Regular w-full flex flex-col bg-[#D8E2F9]"
+    >
       <div className="md:sticky md:top-0 md:left-0 md:flex md:flex-col md:justify-between md:min-h-screen">
-        <p className="pl-6 pt-12 text-center md:text-start text-4xl md:text-5xl font-bold">MEET OUR TEAM:</p>
-        {matches && <img loading="lazy" className="w-[70%]" src={MOTImage} alt="image" />}
+        <p className="pl-6 pt-12 text-center md:text-start text-4xl md:text-5xl font-bold">
+          MEET OUR TEAM:
+        </p>
+        {matches && (
+          <img loading="lazy" className="w-[70%]" src={MOTImage} alt="image" />
+        )}
       </div>
       <div className="md:translate-y-[-100vh] md:w-[50%] md:place-self-end">
-        {Members.map((member, index) => <TeamMember key={index} {...member} />)}
+        {Members.map((member, index) => (
+          <Suspense
+            key={index}
+            fallback={<div className="m-6 p-6 text-center">Loading...</div>}
+          >
+            <TeamMember {...member} />
+          </Suspense>
+        ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default Team;
